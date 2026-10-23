@@ -590,9 +590,9 @@
                     </strong>
 
                     <span class="Cart-price">
-                      ${ products.reduce((acc, el) => {
-                        return acc + (el.price * el.count)
-                      }, 0) }$$
+                        ${ products.reduce((acc, el) => {
+                            return acc + (Number(el.price) * Number(el.count))
+                        }, 0).toFixed(2) }$$
                     </span>
                   </div>
 
