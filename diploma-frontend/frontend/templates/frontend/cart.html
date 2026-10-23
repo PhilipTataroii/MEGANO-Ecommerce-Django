@@ -1,0 +1,190 @@
+
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% block content %}
+  <div class="Middle Middle_top">
+    <div class="Middle-top">
+      <div class="wrap">
+        <div class="Middle-header">
+
+          <h1 class="Middle-title">
+            {% if CURRENT_LANGUAGE == 'ro' %}
+              Coșul de cumpărături
+            {% elif CURRENT_LANGUAGE == 'en' %}
+              Shopping Cart
+            {% else %}
+              Корзина
+            {% endif %}
+          </h1>
+
+          <ul class="breadcrumbs Middle-breadcrumbs">
+            <li class="breadcrumbs-item">
+              <a href="/">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Acasă
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Home
+                {% else %}
+                  Главная
+                {% endif %}
+              </a>
+            </li>
+
+            <li class="breadcrumbs-item breadcrumbs-item_current">
+              <span>
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Coș
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Cart
+                {% else %}
+                  Корзина
+                {% endif %}
+              </span>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="Section">
+      <div class="wrap">
+
+        <form class="form Cart" @submit.prevent="submitBasket">
+          {% csrf_token %}
+
+          <!-- Товары в корзине -->
+          <div
+            v-for="product in Object.values(basket)"
+            :key="product.id"
+            class="Cart-product"
+          >
+
+            <div class="Cart-block Cart-block_row">
+
+              <div class="Cart-block Cart-block_pict">
+                <a class="Cart-pict" :href="`/product/${product.id}/`">
+                  <img
+                    v-if="product.images && product.images.length > 0"
+                    class="Cart-img"
+                    :src="product.images[0].src"
+                    :alt="product.images[0].alt"
+                  />
+                </a>
+              </div>
+
+              <div class="Cart-block Cart-block_info">
+                <a class="Cart-title" :href="`/product/${product.id}/`">
+                  ${ product.title }$
+                </a>
+              </div>
+
+              <div class="Cart-block Cart-block_price">
+                <div class="Cart-price">
+                  ${ Number(product.price).toFixed(2) }$$
+                </div>
+              </div>
+
+            </div>
+
+            <div class="Cart-block Cart-block_row">
+              <div class="Cart-block Cart-block_seller"></div>
+
+              <div class="Cart-block Cart-block_amount">
+                <div class="Cart-amount">
+                  <div class="Amount">
+
+                    <button
+                      class="Amount-remove"
+                      type="button"
+                      @click="removeFromBasket(product.id, 1)"
+                      aria-label="{% if CURRENT_LANGUAGE == 'ro' %}Reduce cantitatea{% elif CURRENT_LANGUAGE == 'en' %}Decrease quantity{% else %}Уменьшить количество{% endif %}">
+                    </button>
+
+                    <input
+                      class="Amount-input form-input"
+                      name="amount"
+                      type="text"
+                      :value="product.count"
+                      readonly
+                    />
+
+                    <button
+                      class="Amount-add"
+                      type="button"
+                      @click="addToBasket(product)"
+                      aria-label="{% if CURRENT_LANGUAGE == 'ro' %}Mărește cantitatea{% elif CURRENT_LANGUAGE == 'en' %}Increase quantity{% else %}Увеличить количество{% endif %}">
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="Cart-block Cart-block_delete">
+                <div
+                  class="Cart-delete"
+                  @click="removeFromBasket(product.id, product.count)"
+                  role="button"
+                  aria-label="{% if CURRENT_LANGUAGE == 'ro' %}Elimină produsul{% elif CURRENT_LANGUAGE == 'en' %}Remove product{% else %}Удалить товар{% endif %}">
+
+                  <img
+                    src="{% static 'frontend/assets/img/icons/card/delete.svg' %}"
+                    alt="delete.svg"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- Конец списка товаров -->
+
+          <div class="Cart-total">
+            <div class="Cart-block Cart-block_total">
+
+              <strong class="Cart-title">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Total:
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Total:
+                {% else %}
+                  Итого:
+                {% endif %}
+              </strong>
+
+              <span class="Cart-price">
+                ${ Number(basketCount.price || 0).toFixed(2) }$$
+              </span>
+
+            </div>
+
+            <div class="Cart-block" v-if="basketCount.count">
+              <button
+                type="submit"
+                class="btn btn_success btn_lg"
+              >
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Finalizează comanda
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Proceed to Checkout
+                {% else %}
+                  Оформить заказ
+                {% endif %}
+              </button>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block mixins %}
+<script src="{% static 'frontend/assets/js/cart.js' %}"></script>
+{% endblock %}

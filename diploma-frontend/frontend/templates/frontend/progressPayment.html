@@ -1,0 +1,81 @@
+
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% block content %}
+  <div class="Middle Middle_top">
+    <div class="Middle-top">
+      <div class="wrap">
+        <div class="Middle-header">
+
+          <h1 class="Middle-title">
+            {% if CURRENT_LANGUAGE == 'ro' %}
+              În așteptarea plății
+            {% elif CURRENT_LANGUAGE == 'en' %}
+              Awaiting Payment
+            {% else %}
+              Ожидание оплаты
+            {% endif %}
+          </h1>
+
+          <ul class="breadcrumbs Middle-breadcrumbs">
+            <li class="breadcrumbs-item">
+              <a href="/">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Acasă
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Home
+                {% else %}
+                  Главная
+                {% endif %}
+              </a>
+            </li>
+
+            <li class="breadcrumbs-item breadcrumbs-item_current">
+              <span>
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  În așteptarea plății
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Awaiting Payment
+                {% else %}
+                  Ожидание оплаты
+                {% endif %}
+              </span>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="Section">
+      <div class="wrap">
+        <div class="ProgressPayment">
+
+          <div class="ProgressPayment-title">
+            {% if CURRENT_LANGUAGE == 'ro' %}
+              Așteptăm confirmarea plății din partea sistemului de plată.
+            {% elif CURRENT_LANGUAGE == 'en' %}
+              We are waiting for payment confirmation from the payment system.
+            {% else %}
+              Ждём подтверждения оплаты платёжной системой.
+            {% endif %}
+          </div>
+
+          <div class="ProgressPayment-icon">
+            <div class="cssload-thecube">
+              <div class="cssload-cube cssload-c1"></div>
+              <div class="cssload-cube cssload-c2"></div>
+              <div class="cssload-cube cssload-c4"></div>
+              <div class="cssload-cube cssload-c3"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

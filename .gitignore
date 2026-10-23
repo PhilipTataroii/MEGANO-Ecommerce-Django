@@ -1,0 +1,34 @@
+﻿.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment
+.venv/
+venv/
+
+# PyCharm
+.idea/
+
+# Databases
+db.sqlite3
+*.sqlite3
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Uploaded files
+media/
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build files
+dist/
+build/

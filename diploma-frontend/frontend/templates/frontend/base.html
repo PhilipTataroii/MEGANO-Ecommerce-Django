@@ -1,0 +1,550 @@
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as CURRENT_LANGUAGE %}
+<!DOCTYPE html>
+<html lang="{{ CURRENT_LANGUAGE }}">
+<head>
+  <title>Megano</title>
+  <meta name="description" content="Описание страницы">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+  <link href="{% static 'frontend/favicon.ico' %}" rel="shortcut icon">
+
+  <link href="{% static 'frontend/assets/fonts/Roboto/Roboto-Regular.woff' %}" as="font">
+  <link href="{% static 'frontend/assets/fonts/Roboto/Roboto-Italic.woff' %}" as="font">
+  <link href="{% static 'frontend/assets/fonts/Roboto/Roboto-Bold.woff' %}" as="font">
+  <link href="{% static 'frontend/assets/fonts/Roboto/Roboto-Bold_Italic.woff' %}" as="font">
+  <link href="{% static 'frontend/assets/fonts/Roboto/Roboto-Light.woff' %}" as="font">
+  <link href="{% static 'frontend/assets/fonts/Roboto/Roboto-Light_Italic.woff' %}" as="font">
+
+  <link rel="stylesheet" href="{% static 'frontend/assets/css/fonts.css' %}">
+  <link rel="stylesheet" href="{% static 'frontend/assets/css/basic.css' %}">
+  <link rel="stylesheet" href="{% static 'frontend/assets/css/extra.css' %}">
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- <script src="{% static 'frontend/assets/plg/vue.global.js' %}"></script> -->
+  <script src="{% static 'frontend/assets/plg/CountDown/countdown.js' %}"></script>
+
+  {% block mixins %}{% endblock %}
+
+  <script defer src="{% static 'frontend/assets/js/app.js' %}"></script>
+  <script defer src="{% static 'frontend/assets/plg/jQuery/jquery-3.5.0.slim.min.js' %}"></script>
+  <script defer src="{% static 'frontend/assets/plg/form/jquery.form.js' %}"></script>
+  <script defer src="{% static 'frontend/assets/plg/form/jquery.maskedinput.min.js' %}"></script>
+  <script defer src="{% static 'frontend/assets/plg/range/ion.rangeSlider.min.js' %}"></script>
+  <script defer src="{% static 'frontend/assets/plg/Slider/slick.min.js' %}"></script>
+  <script defer src="{% static 'frontend/assets/js/scripts.js' %}"></script>
+</head>
+
+<body class="Site" id="site" data-authenticated="{% if user.is_authenticated %}true{% else %}false{% endif %}">
+
+  <header class="Header">
+    <div class="ControlPanel">
+      <div class="wrap">
+        <div class="row ControlPanel-row">
+
+          <div class="row-block">
+            <div class="row ControlPanel-rowSplit">
+
+              <div class="row-block">
+                <span class="ControlPanel-title">
+                  {% if CURRENT_LANGUAGE == 'ru' %}
+                    Бесплатная доставка
+                  {% elif CURRENT_LANGUAGE == 'ro' %}
+                    Livrare gratuită
+                  {% else %}
+                    Free delivery
+                  {% endif %}
+                </span>
+              </div>
+
+              <div class="row-block hide_700">
+                <span class="ControlPanel-title">
+                  {% if CURRENT_LANGUAGE == 'ru' %}
+                    Мы в соцсетях
+                  {% elif CURRENT_LANGUAGE == 'ro' %}
+                    Urmărește-ne
+                  {% else %}
+                    Follow Us
+                  {% endif %}
+                </span>
+
+                <ul class="menu menu_img menu_smallImg ControlPanel-menu">
+                  <li class="menu-item">
+                    <a class="menu-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="{% static 'frontend/assets/img/icons/socialHeader/fb.svg' %}" alt="Facebook"/>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a class="menu-link" href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="{% static 'frontend/assets/img/icons/socialHeader/tw.svg' %}" alt="X"/>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a class="menu-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="{% static 'frontend/assets/img/icons/socialHeader/in.svg' %}" alt="LinkedIn"/>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a class="menu-link" href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="{% static 'frontend/assets/img/icons/socialHeader/pt.svg' %}" alt="Pinterest"/>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a class="menu-link" href="mailto:filiptataroiit@gmail.com">
+                      <img src="{% static 'frontend/assets/img/icons/socialHeader/mail.svg' %}" alt="Email"/>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <nav class="row-block">
+            <div class="row ControlPanel-rowSplit">
+
+              <!-- Переключатель языков -->
+              <div class="row-block">
+                <form action="{% url 'set_language' %}" method="post" class="LanguageSwitcher">
+                  {% csrf_token %}
+                  <input type="hidden" name="next" value="{{ request.get_full_path }}">
+
+                  <select name="language"
+                          onchange="this.form.submit()"
+                          aria-label="Выбрать язык">
+                    <option value="ru" {% if CURRENT_LANGUAGE == 'ru' %}selected{% endif %}>Русский</option>
+                    <option value="ro" {% if CURRENT_LANGUAGE == 'ro' %}selected{% endif %}>Română</option>
+                    <option value="en" {% if CURRENT_LANGUAGE == 'en' %}selected{% endif %}>English</option>
+                  </select>
+                </form>
+              </div>
+
+              {% if user.is_authenticated %}
+                <div class="row-block">
+                  <a class="ControlPanel-title" href="/profile">{{ user.username }}</a>
+                </div>
+                <div class="row-block">
+                  <a class="ControlPanel-title" href="#" @click.prevent="signOut()">
+                    {% if CURRENT_LANGUAGE == 'ru' %}
+                      Выйти
+                    {% elif CURRENT_LANGUAGE == 'ro' %}
+                      Deconectare
+                    {% else %}
+                      Log out
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                <div class="row-block">
+                  <a class="ControlPanel-title" href="/sign-in">
+                    {% if CURRENT_LANGUAGE == 'ru' %}
+                      Вход / Регистрация
+                    {% elif CURRENT_LANGUAGE == 'ro' %}
+                      Autentificare / Înregistrare
+                    {% else %}
+                      Login / Register
+                    {% endif %}
+                  </a>
+                </div>
+              {% endif %}
+
+            </div>
+          </nav>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="row Header-rowMain">
+
+        <div class="row-block Header-logo">
+          <a class="logo" href="/">
+            <img class="logo-image" src="{% static 'frontend/assets/img/logo.png' %}" alt="Megano"/>
+          </a>
+        </div>
+
+        <nav class="row-block row-block_right Header-menu">
+          <div class="menuModal" id="navigate">
+            <ul class="menu menu_main">
+
+              <li class="menu-item">
+                <a class="menu-link" href="/">
+                  {% if CURRENT_LANGUAGE == 'ru' %}
+                    Главная
+                  {% elif CURRENT_LANGUAGE == 'ro' %}
+                    Acasă
+                  {% else %}
+                    Home
+                  {% endif %}
+                </a>
+              </li>
+
+              <li class="menu-item">
+                <a class="menu-link" href="/sale">
+                  {% if CURRENT_LANGUAGE == 'ru' %}
+                    Скидки
+                  {% elif CURRENT_LANGUAGE == 'ro' %}
+                    Reduceri
+                  {% else %}
+                    Sale
+                  {% endif %}
+                </a>
+              </li>
+
+              <li class="menu-item">
+                <span class="menu-label menu-label_success">
+                  {% if CURRENT_LANGUAGE == 'ru' %}
+                    Хит
+                  {% elif CURRENT_LANGUAGE == 'ro' %}
+                    Popular
+                  {% else %}
+                    Hot
+                  {% endif %}
+                </span>
+                <a class="menu-link" href="/catalog">
+                  {% if CURRENT_LANGUAGE == 'ru' %}
+                    Каталог
+                  {% elif CURRENT_LANGUAGE == 'ro' %}
+                    Catalog
+                  {% else %}
+                    Catalog
+                  {% endif %}
+                </a>
+              </li>
+
+              <!-- Purchase menu item disabled -->
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Корзина в шапке -->
+        <div class="row-block">
+          <div class="CartBlock">
+            <a class="CartBlock-block" href="/cart/">
+              <img class="CartBlock-img"
+                   src="{% static 'frontend/assets/img/icons/cart.svg' %}"
+                   alt="Cart"/>
+              <span class="CartBlock-amount" v-text="basketCount.count"></span>
+            </a>
+
+            <div class="CartBlock-block">
+              <span class="CartBlock-price">${ Number(basketCount.price || 0).toFixed(2) }$$</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row-block Header-trigger">
+          <a class="menuTrigger" href="#navigate">
+            <div class="menuTrigger-content">
+              {% if CURRENT_LANGUAGE == 'ru' %}
+                Показать меню
+              {% elif CURRENT_LANGUAGE == 'ro' %}
+                Afișează meniul
+              {% else %}
+                Show menu
+              {% endif %}
+            </div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="Header-searchWrap">
+      <div class="wrap">
+
+        <div class="Header-categories">
+          <div class="CategoriesButton">
+
+            <div class="CategoriesButton-title">
+              <div class="CategoriesButton-icon">
+                <img src="{% static 'frontend/assets/img/icons/allDep.svg' %}" alt="Categories"/>
+              </div>
+
+              <span class="CategoriesButton-text">
+                {% if CURRENT_LANGUAGE == 'ru' %}
+                  Все категории
+                {% elif CURRENT_LANGUAGE == 'ro' %}
+                  Toate categoriile
+                {% else %}
+                  All Departments
+                {% endif %}
+              </span>
+
+              <div class="CategoriesButton-arrow"></div>
+            </div>
+
+            <div class="CategoriesButton-content">
+
+              <!-- Категории и подкатегории -->
+              <div class="CategoriesButton-link" v-for="category in categories">
+                <a :href="`/catalog/${category.id}/`">
+                  <div class="CategoriesButton-icon"
+                       v-if="category.image && category.image.src">
+                    <img :src="category.image.src" :alt="category.image.alt"/>
+                  </div>
+                  <span class="CategoriesButton-text">${ category.title }$</span>
+                </a>
+
+                <a v-if="category.subcategories.length > 0"
+                   class="CategoriesButton-arrow"
+                   href="#"></a>
+
+                <div v-if="category.subcategories.length > 0"
+                     class="CategoriesButton-submenu">
+                  <div v-for="subcategory in category.subcategories">
+                    <a class="CategoriesButton-link"
+                       :href="`/catalog/${subcategory.id}/`">
+                      <div class="CategoriesButton-icon"
+                           v-if="subcategory.image && subcategory.image.src">
+                        <img :src="subcategory.image.src"
+                             :alt="subcategory.image.alt"/>
+                      </div>
+                      <span class="CategoriesButton-text">${ subcategory.title }$</span>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+              <!-- Конец категорий -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="Header-searchLink">
+          <img src="{% static 'frontend/assets/img/icons/search.svg' %}" alt="Search"/>
+        </div>
+
+        <div class="Header-search">
+          <div class="search">
+            <form class="form form_search" @submit.prevent="search">
+              <input class="search-input"
+                     id="query"
+                     name="query"
+                     type="text"
+                     v-model="searchText"
+                     placeholder="{% if CURRENT_LANGUAGE == 'ru' %}Что вы ищете?{% elif CURRENT_LANGUAGE == 'ro' %}Ce cauți?{% else %}What are you looking for?{% endif %}"/>
+
+              <button class="search-button"
+                      type="submit"
+                      name="search"
+                      id="search">
+                <img src="{% static 'frontend/assets/img/icons/search.svg' %}" alt="Search"/>
+                {% if CURRENT_LANGUAGE == 'ru' %}
+                  Поиск
+                {% elif CURRENT_LANGUAGE == 'ro' %}
+                  Caută
+                {% else %}
+                  Search
+                {% endif %}
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer class="Footer">
+    <div class="wrap">
+      <div class="row Footer-main">
+
+        <div class="row-block">
+          <a class="logo Footer-logo" href="/">
+            <img class="logo-image"
+                 src="{% static 'frontend/assets/img/logo_footer.png' %}"
+                 alt="Megano"/>
+          </a>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincid unt ut laoreet dolore
+            magna aliquam erat volutpat. Ut wisi enim ad
+          </p>
+
+          <ul class="menu menu_img menu_smallImg Footer-menuSoc">
+            <li class="menu-item">
+              <a class="menu-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                <img src="{% static 'frontend/assets/img/icons/socialHeader/fb.svg' %}" alt="Facebook"/>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                <img src="{% static 'frontend/assets/img/icons/socialHeader/tw.svg' %}" alt="X"/>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                <img src="{% static 'frontend/assets/img/icons/socialHeader/in.svg' %}" alt="LinkedIn"/>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">
+                <img src="{% static 'frontend/assets/img/icons/socialHeader/pt.svg' %}" alt="Pinterest"/>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="mailto:filiptataroiit@gmail.com">
+                <img src="{% static 'frontend/assets/img/icons/socialHeader/mail.svg' %}" alt="Email"/>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="row-block">
+          <strong class="Footer-title">
+            {% if CURRENT_LANGUAGE == 'ru' %}
+              Полезные ссылки
+            {% elif CURRENT_LANGUAGE == 'ro' %}
+              Linkuri utile
+            {% else %}
+              Useful Links
+            {% endif %}
+          </strong>
+
+          <ul class="menu menu_vt Footer-menu">
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                {% if CURRENT_LANGUAGE == 'ru' %}Оформление заказа{% elif CURRENT_LANGUAGE == 'ro' %}Finalizare comandă{% else %}Checkout{% endif %}
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                {% if CURRENT_LANGUAGE == 'ru' %}Моя корзина{% elif CURRENT_LANGUAGE == 'ro' %}Coșul meu{% else %}My Cart{% endif %}
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                {% if CURRENT_LANGUAGE == 'ru' %}Доставка{% elif CURRENT_LANGUAGE == 'ro' %}Livrare{% else %}Delivery{% endif %}
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                {% if CURRENT_LANGUAGE == 'ru' %}Информация о заказе{% elif CURRENT_LANGUAGE == 'ro' %}Informații despre comandă{% else %}Order Info{% endif %}
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                {% if CURRENT_LANGUAGE == 'ru' %}Правила{% elif CURRENT_LANGUAGE == 'ro' %}Termeni{% else %}Terms{% endif %}
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                {% if CURRENT_LANGUAGE == 'ru' %}Условия{% elif CURRENT_LANGUAGE == 'ro' %}Condiții{% else %}Conditions{% endif %}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="row-block">
+          <strong class="Footer-title">
+            {% if CURRENT_LANGUAGE == 'ru' %}
+              Мой аккаунт
+            {% elif CURRENT_LANGUAGE == 'ro' %}
+              Contul meu
+            {% else %}
+              My Account
+            {% endif %}
+          </strong>
+
+          <ul class="menu menu_vt Footer-menu">
+            <li class="menu-item"><a class="menu-link" href="#">
+              {% if CURRENT_LANGUAGE == 'ru' %}Аксессуары{% elif CURRENT_LANGUAGE == 'ro' %}Accesorii{% else %}Accessories{% endif %}
+            </a></li>
+            <li class="menu-item"><a class="menu-link" href="#">
+              {% if CURRENT_LANGUAGE == 'ru' %}Сумки{% elif CURRENT_LANGUAGE == 'ro' %}Genți{% else %}Bags{% endif %}
+            </a></li>
+            <li class="menu-item"><a class="menu-link" href="#">
+              {% if CURRENT_LANGUAGE == 'ru' %}Камеры{% elif CURRENT_LANGUAGE == 'ro' %}Camere foto{% else %}Cameras{% endif %}
+            </a></li>
+            <li class="menu-item"><a class="menu-link" href="#">
+              {% if CURRENT_LANGUAGE == 'ru' %}Одежда{% elif CURRENT_LANGUAGE == 'ro' %}Îmbrăcăminte{% else %}Clothing{% endif %}
+            </a></li>
+            <li class="menu-item"><a class="menu-link" href="#">
+              {% if CURRENT_LANGUAGE == 'ru' %}Электроника{% elif CURRENT_LANGUAGE == 'ro' %}Electronice{% else %}Electronics{% endif %}
+            </a></li>
+            <li class="menu-item"><a class="menu-link" href="#">
+              {% if CURRENT_LANGUAGE == 'ru' %}Мода{% elif CURRENT_LANGUAGE == 'ro' %}Modă{% else %}Fashion{% endif %}
+            </a></li>
+          </ul>
+        </div>
+
+        <div class="row-block">
+          <strong class="Footer-title">
+            {% if CURRENT_LANGUAGE == 'ru' %}
+              Контакты
+            {% elif CURRENT_LANGUAGE == 'ro' %}
+              Contacte
+            {% else %}
+              Contacts
+            {% endif %}
+          </strong>
+
+          <p>
+            Phone: 8.800.200.600<br>
+            Email: Support@ninzio.com<br>
+            Skype: techno<br>
+            Address: New York, north<br>
+            Avenue 26/7<br>
+            0057
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="Footer-copy">
+      <div class="wrap">
+        <div class="row row_space">
+
+          <div class="row-block">
+            © Copyright&#32;
+            <a href="#">Megano Store.</a>
+            &#32;All rights reserved.
+          </div>
+
+          <div class="row-block">
+            <span>
+              {% if CURRENT_LANGUAGE == 'ru' %}
+                Способы оплаты
+              {% elif CURRENT_LANGUAGE == 'ro' %}
+                Metode de plată
+              {% else %}
+                Accepted Payments
+              {% endif %}
+            </span>
+
+            <div class="Footer-payments">
+              <div><img src="{% static 'frontend/assets/img/payments/visa.png' %}" alt="Visa"/></div>
+              <div><img src="{% static 'frontend/assets/img/payments/mastercard.png' %}" alt="Mastercard"/></div>
+              <div><img src="{% static 'frontend/assets/img/payments/paypal.png' %}" alt="PayPal"/></div>
+              <div><img src="{% static 'frontend/assets/img/payments/american.png' %}" alt="American Express"/></div>
+              <div><img src="{% static 'frontend/assets/img/payments/electron.png' %}" alt="Electron"/></div>
+              <div><img src="{% static 'frontend/assets/img/payments/maestro.png' %}" alt="Maestro"/></div>
+              <div><img src="{% static 'frontend/assets/img/payments/delta.png' %}" alt="Delta"/></div>
+              <div><img src="{% static 'frontend/assets/img/payments/e.png' %}" alt="E"/></div>
+              <div><img src="{% static 'frontend/assets/img/payments/dk.png' %}" alt="DK"/></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

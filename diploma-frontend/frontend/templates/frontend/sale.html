@@ -1,0 +1,62 @@
+
+{% extends "frontend/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="Middle Middle_top">
+    <div class="Middle-top">
+        <div class="wrap">
+            <div class="Middle-header">
+                <h1 class="Middle-title">MEGANO Limited Edition</h1>
+                <ul class="breadcrumbs Middle-breadcrumbs">
+                    <li class="breadcrumbs-item">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="breadcrumbs-item breadcrumbs-item_current">
+                        <span>Limited Edition</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="Section">
+        <div class="wrap">
+            <div class="Cards Cards_blog">
+                <div v-for="card in salesCards"
+                     :key="card.id"
+                     class="Card">
+
+                    <a :href="`/product/${card.id}/`">
+                        <div class="Card-picture">
+                            <img
+                                v-if="card.images && card.images.length && card.images[0].src"
+                                :src="card.images[0].src"
+                                :alt="card.images[0].alt || card.title"
+                            />
+                        </div>
+
+                        <div class="Card-content">
+                            <strong class="Card-title">
+                                ${ card.title }$
+                            </strong>
+
+                            <div class="Card-description">
+                                ${ Number(card.price).toLocaleString('ru-RU') }$
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <p v-if="salesCards.length === 0">
+                Сейчас нет товаров ограниченной серии.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block mixins %}
+<script src="{% static 'frontend/assets/js/sales.js' %}"></script>
+{% endblock %}

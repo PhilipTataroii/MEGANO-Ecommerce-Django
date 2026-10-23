@@ -1,0 +1,241 @@
+
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% block content %}
+<div class="Middle Middle_top">
+  <div class="Middle-top">
+    <div class="wrap">
+      <div class="Middle-header">
+        <h1 class="Middle-title">
+          {% if CURRENT_LANGUAGE == 'ro' %}
+            Istoricul comenzilor
+          {% elif CURRENT_LANGUAGE == 'en' %}
+            Order History
+          {% else %}
+            История заказов
+          {% endif %}
+        </h1>
+
+        <ul class="breadcrumbs Middle-breadcrumbs">
+          <li class="breadcrumbs-item">
+            <a href="/">
+              {% if CURRENT_LANGUAGE == 'ro' %}Acasă
+              {% elif CURRENT_LANGUAGE == 'en' %}Home
+              {% else %}Главная{% endif %}
+            </a>
+          </li>
+          <li class="breadcrumbs-item breadcrumbs-item_current">
+            <span>
+              {% if CURRENT_LANGUAGE == 'ro' %}Istoricul comenzilor
+              {% elif CURRENT_LANGUAGE == 'en' %}Order History
+              {% else %}История заказов{% endif %}
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="Section Section_column Section_columnLeft">
+    <div class="wrap">
+      <div class="Section-column">
+        <div class="Section-columnSection">
+          <header class="Section-header">
+            <strong class="Section-title">
+              {% if CURRENT_LANGUAGE == 'ro' %}Navigare
+              {% elif CURRENT_LANGUAGE == 'en' %}Navigation
+              {% else %}Навигация{% endif %}
+            </strong>
+          </header>
+
+          <div class="Section-columnContent">
+            <div class="NavigateProfile">
+              <ul class="menu menu_vt">
+                <li class="menu-item">
+                  <a class="menu-link" href="/profile">
+                    {% if CURRENT_LANGUAGE == 'ro' %}Profil
+                    {% elif CURRENT_LANGUAGE == 'en' %}Profile
+                    {% else %}Профиль{% endif %}
+                  </a>
+                </li>
+
+                <li class="menu-item">
+                  <a class="menu-link" href="/history-order">
+                    {% if CURRENT_LANGUAGE == 'ro' %}Istoricul comenzilor
+                    {% elif CURRENT_LANGUAGE == 'en' %}Order History
+                    {% else %}История заказов{% endif %}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="Section-content">
+        <div class="Orders">
+
+          <div v-for="order in orders"
+               :key="order.id"
+               class="Order Order_anons">
+
+            <div class="Order-personal">
+              <div class="row">
+
+                <div class="row-block">
+                  <a class="Order-title"
+                     :href="`/orders/${order.id}/`">
+
+                    {% if CURRENT_LANGUAGE == 'ro' %}Comanda
+                    {% elif CURRENT_LANGUAGE == 'en' %}Order
+                    {% else %}Заказ{% endif %}
+
+                    &#32;<span class="Order-numberOrder">№${order.id}$</span>&#32;
+
+                    {% if CURRENT_LANGUAGE == 'ro' %}din
+                    {% elif CURRENT_LANGUAGE == 'en' %}dated
+                    {% else %}от{% endif %}
+
+                    &#32;<span class="Order-dateOrder">${order.createdAt}$</span>
+                  </a>
+                </div>
+
+                <div class="row-block">
+
+                  <!-- ДОСТАВКА -->
+                  <div class="Order-info Order-info_delivery">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}Tipul livrării:
+                      {% elif CURRENT_LANGUAGE == 'en' %}Delivery type:
+                      {% else %}Тип доставки:{% endif %}
+                    </div>
+
+                    <div class="Order-infoContent">
+                      <template v-if="order.deliveryType === 'ordinary'">
+                        {% if CURRENT_LANGUAGE == 'ro' %}Livrare standard
+                        {% elif CURRENT_LANGUAGE == 'en' %}Standard delivery
+                        {% else %}Обычная доставка{% endif %}
+                      </template>
+
+                      <template v-else-if="order.deliveryType === 'express'">
+                        {% if CURRENT_LANGUAGE == 'ro' %}Livrare expres
+                        {% elif CURRENT_LANGUAGE == 'en' %}Express delivery
+                        {% else %}Экспресс-доставка{% endif %}
+                      </template>
+
+                      <template v-else>
+                        ${order.deliveryType || '—'}$
+                      </template>
+                    </div>
+                  </div>
+
+                  <!-- ОПЛАТА -->
+                  <div class="Order-info Order-info_pay">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}Metoda de plată:
+                      {% elif CURRENT_LANGUAGE == 'en' %}Payment method:
+                      {% else %}Оплата:{% endif %}
+                    </div>
+
+                    <div class="Order-infoContent">
+                      <template v-if="order.paymentType === 'online'">
+                        {% if CURRENT_LANGUAGE == 'ro' %}Plată online cu cardul
+                        {% elif CURRENT_LANGUAGE == 'en' %}Online card payment
+                        {% else %}Онлайн картой{% endif %}
+                      </template>
+
+                      <template v-else-if="order.paymentType === 'someone'">
+                        {% if CURRENT_LANGUAGE == 'ro' %}Plată dintr-un cont aleatoriu
+                        {% elif CURRENT_LANGUAGE == 'en' %}Payment from a random account
+                        {% else %}Онлайн со случайного чужого счёта{% endif %}
+                      </template>
+
+                      <template v-else>
+                        ${order.paymentType || '—'}$
+                      </template>
+                    </div>
+                  </div>
+
+                  <!-- СТОИМОСТЬ -->
+                  <div class="Order-info">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}Cost total:
+                      {% elif CURRENT_LANGUAGE == 'en' %}Total cost:
+                      {% else %}Общая стоимость:{% endif %}
+                    </div>
+
+                    <div class="Order-infoContent">
+                      <span class="Order-price">${order.totalCost}$$</span>
+                    </div>
+                  </div>
+
+                  <!-- СТАТУС -->
+                  <div class="Order-info Order-info_status">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}Stare:
+                      {% elif CURRENT_LANGUAGE == 'en' %}Status:
+                      {% else %}Статус:{% endif %}
+                    </div>
+
+                    <div class="Order-infoContent">
+                      <span v-if="order.status === 'created'">
+                        {% if CURRENT_LANGUAGE == 'ro' %}Creată
+                        {% elif CURRENT_LANGUAGE == 'en' %}Created
+                        {% else %}Создан{% endif %}
+                      </span>
+
+                      <span v-else-if="order.status === 'accepted'">
+                        {% if CURRENT_LANGUAGE == 'ro' %}Confirmată
+                        {% elif CURRENT_LANGUAGE == 'en' %}Confirmed
+                        {% else %}Подтверждён{% endif %}
+                      </span>
+
+                      <span v-else-if="order.status === 'pending'">
+                        {% if CURRENT_LANGUAGE == 'ro' %}Plata se procesează
+                        {% elif CURRENT_LANGUAGE == 'en' %}Payment processing
+                        {% else %}Оплата обрабатывается{% endif %}
+                      </span>
+
+                      <span v-else-if="order.status === 'paid'">
+                        {% if CURRENT_LANGUAGE == 'ro' %}Plătită
+                        {% elif CURRENT_LANGUAGE == 'en' %}Paid
+                        {% else %}Оплачен{% endif %}
+                      </span>
+
+                      <span v-else-if="order.status === 'payment_failed'">
+                        {% if CURRENT_LANGUAGE == 'ro' %}Plată eșuată
+                        {% elif CURRENT_LANGUAGE == 'en' %}Payment failed
+                        {% else %}Ошибка оплаты{% endif %}
+                      </span>
+
+                      <span v-else-if="order.status === 'cancelled'">
+                        {% if CURRENT_LANGUAGE == 'ro' %}Anulată
+                        {% elif CURRENT_LANGUAGE == 'en' %}Cancelled
+                        {% else %}Отменён{% endif %}
+                      </span>
+
+                      <span v-else>
+                        ${order.status || '—'}$
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block mixins %}
+<script src="{% static 'frontend/assets/js/historyOrder.js' %}"></script>
+{% endblock %}

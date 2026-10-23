@@ -1,0 +1,340 @@
+
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% block content %}
+<div class="Middle Middle_top">
+  <div class="Middle-top">
+    <div class="wrap">
+      <div class="Middle-header">
+        <h1 class="Middle-title">
+          {% if CURRENT_LANGUAGE == 'ro' %}
+            Despre Megano
+          {% elif CURRENT_LANGUAGE == 'en' %}
+            About Megano
+          {% else %}
+            О магазине Megano
+          {% endif %}
+        </h1>
+
+        <ul class="breadcrumbs Middle-breadcrumbs">
+          <li class="breadcrumbs-item">
+            <a href="/">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Acasă
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Home
+              {% else %}
+                Главная
+              {% endif %}
+            </a>
+          </li>
+          <li class="breadcrumbs-item breadcrumbs-item_current">
+            <span>
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Despre noi
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                About Us
+              {% else %}
+                О нас
+              {% endif %}
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="Section Section_column Section_columnLeft Section_columnWide">
+    <div class="wrap">
+      <div class="Section-column">
+
+        <div class="Section-columnSection Section-columnSection_mark">
+          <div class="media media_advantage">
+            <div class="media-image">
+              <img src="{% static 'frontend/assets/img/icons/advantages/shipping.svg' %}" alt="shipping.svg"/>
+            </div>
+            <div class="media-content">
+              <strong class="media-title">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Livrare și retur
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Shipping & Returns
+                {% else %}
+                  Доставка и возврат
+                {% endif %}
+              </strong>
+              <p class="media-text">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Livrare internațională
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Worldwide shipping
+                {% else %}
+                  Доставка по всему миру
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="Section-columnSection Section-columnSection_mark">
+          <div class="media media_advantage">
+            <div class="media-image">
+              <img src="{% static 'frontend/assets/img/icons/advantages/moneyBack.svg' %}" alt="moneyBack.svg"/>
+            </div>
+            <div class="media-content">
+              <strong class="media-title">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Rambursarea banilor
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Money Back
+                {% else %}
+                  Возврат денег
+                {% endif %}
+              </strong>
+              <p class="media-text">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Plăți sigure
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Secure payments
+                {% else %}
+                  Безопасная оплата
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="Section-columnSection Section-columnSection_mark">
+          <div class="media media_advantage">
+            <div class="media-image">
+              <img src="{% static 'frontend/assets/img/icons/advantages/support.svg' %}" alt="support.svg"/>
+            </div>
+            <div class="media-content">
+              <strong class="media-title">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Asistență pentru clienți
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Customer Support
+                {% else %}
+                  Поддержка клиентов
+                {% endif %}
+              </strong>
+              <p class="media-text">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Echipa noastră este gata să vă ajute
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Our team is ready to help
+                {% else %}
+                  Наша команда готова помочь
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="Section-columnSection Section-columnSection_mark">
+          <div class="media media_advantage">
+            <div class="media-image">
+              <img src="{% static 'frontend/assets/img/icons/advantages/quality.svg' %}" alt="quality.svg"/>
+            </div>
+            <div class="media-content">
+              <strong class="media-title">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Garanția calității
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Quality Guarantee
+                {% else %}
+                  Гарантия качества
+                {% endif %}
+              </strong>
+              <p class="media-text">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  Produse atent selectate
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  Carefully selected products
+                {% else %}
+                  Тщательно отобранные товары
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="Section-columnSection">
+          <header class="Section-header">
+            <strong class="Section-title">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Urmărește-ne
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Follow Us
+              {% else %}
+                Мы в социальных сетях
+              {% endif %}
+            </strong>
+          </header>
+
+          <div class="Section-columnContent">
+            <div class="Footer-payments Footer-payments_column">
+              <div><img src="{% static 'frontend/assets/img/icons/socialContent/fb.png' %}" alt="Facebook"/></div>
+              <div><img src="{% static 'frontend/assets/img/icons/socialContent/tw.png' %}" alt="X"/></div>
+              <div><img src="{% static 'frontend/assets/img/icons/socialContent/gg.png' %}" alt="Google"/></div>
+              <div><img src="{% static 'frontend/assets/img/icons/socialContent/in.png' %}" alt="LinkedIn"/></div>
+              <div><img src="{% static 'frontend/assets/img/icons/socialContent/pt.png' %}" alt="Pinterest"/></div>
+              <div><img src="{% static 'frontend/assets/img/icons/socialContent/ml.png' %}" alt="Email"/></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="Section-content">
+        <article class="Article">
+
+          <div class="Article-section">
+            <div class="row row_verticalCenter row_maxHalf">
+              <div class="row-block">
+                <h2>
+                  {% if CURRENT_LANGUAGE == 'ro' %}
+                    De ce să alegi Megano?
+                  {% elif CURRENT_LANGUAGE == 'en' %}
+                    Why Choose Megano?
+                  {% else %}
+                    Почему выбирают Megano?
+                  {% endif %}
+                </h2>
+
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  <p>
+                    Bine ai venit la Megano, un magazin online unde poți
+                    descoperi produse din diferite categorii într-un singur loc.
+                    Ne dorim să oferim o experiență de cumpărături simplă,
+                    comodă și plăcută.
+                  </p>
+                  <p>
+                    Explorează catalogul nostru, compară produsele,
+                    adaugă articolele preferate în coș și plasează
+                    comanda în doar câțiva pași.
+                  </p>
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  <p>
+                    Welcome to Megano, an online store where you can
+                    discover products from different categories in one place.
+                    Our goal is to provide a simple, convenient and
+                    enjoyable shopping experience.
+                  </p>
+                  <p>
+                    Explore our catalog, compare products, add your
+                    favorites to the cart and place your order
+                    in just a few steps.
+                  </p>
+                {% else %}
+                  <p>
+                    Добро пожаловать в Megano — интернет-магазин,
+                    где можно найти товары разных категорий в одном месте.
+                    Мы стремимся сделать покупки простыми,
+                    удобными и приятными.
+                  </p>
+                  <p>
+                    Изучайте каталог, сравнивайте товары,
+                    добавляйте понравившиеся позиции в корзину
+                    и оформляйте заказ всего за несколько шагов.
+                  </p>
+                {% endif %}
+
+                <div>
+                  <a class="btn btn_primary" href="/catalog">
+                    {% if CURRENT_LANGUAGE == 'ro' %}
+                      Vezi catalogul
+                    {% elif CURRENT_LANGUAGE == 'en' %}
+                      Explore Catalog
+                    {% else %}
+                      Перейти в каталог
+                    {% endif %}
+                  </a>
+                </div>
+              </div>
+
+              <div class="row-block">
+                <div class="pict">
+                  <img src="{% static 'frontend/assets/img/content/home/slider.png' %}" alt="Megano"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Article-section">
+            <div class="row row_verticalCenter row_maxHalf">
+              <div class="row-block">
+                <div class="pict">
+                  <img src="{% static 'frontend/assets/img/content/home/bigGoods.png' %}" alt="Megano products"/>
+                </div>
+              </div>
+
+              <div class="row-block">
+                <h2>
+                  {% if CURRENT_LANGUAGE == 'ro' %}
+                    Povestea magazinului Megano
+                  {% elif CURRENT_LANGUAGE == 'en' %}
+                    The Megano Store Story
+                  {% else %}
+                    История магазина Megano
+                  {% endif %}
+                </h2>
+
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                  <p>
+                    Megano este un proiect de magazin online creat
+                    pentru a demonstra funcționalitățile unei platforme
+                    moderne de comerț electronic.
+                  </p>
+                  <ul>
+                    <li>Catalog de produse și categorii</li>
+                    <li>Căutare și filtrare</li>
+                    <li>Coș de cumpărături</li>
+                    <li>Cont personal</li>
+                    <li>Plasarea comenzilor</li>
+                    <li>Procesarea plăților în modul demonstrativ</li>
+                  </ul>
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                  <p>
+                    Megano is an online store project created
+                    to demonstrate the features of a modern
+                    e-commerce platform.
+                  </p>
+                  <ul>
+                    <li>Product catalog and categories</li>
+                    <li>Search and filtering</li>
+                    <li>Shopping cart</li>
+                    <li>Personal account</li>
+                    <li>Order checkout</li>
+                    <li>Payment processing in demo mode</li>
+                  </ul>
+                {% else %}
+                  <p>
+                    Megano — проект интернет-магазина,
+                    созданный для демонстрации возможностей
+                    современной платформы электронной коммерции.
+                  </p>
+                  <ul>
+                    <li>Каталог товаров и категорий</li>
+                    <li>Поиск и фильтрация</li>
+                    <li>Корзина покупок</li>
+                    <li>Личный кабинет</li>
+                    <li>Оформление заказов</li>
+                    <li>Обработка платежей в демонстрационном режиме</li>
+                  </ul>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

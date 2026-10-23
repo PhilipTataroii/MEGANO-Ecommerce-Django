@@ -1,0 +1,1922 @@
+[
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "title": "Электроника",
+    "description": "",
+    "icon": "categories/1016189165.jpg",
+    "parent": null,
+    "is_active": true,
+    "is_featured": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 2,
+  "fields": {
+    "title": "Смартфоны",
+    "description": "Современные смартфоны",
+    "icon": "categories/phone_lite.png",
+    "parent": null,
+    "is_active": true,
+    "is_featured": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 3,
+  "fields": {
+    "title": "Ноутбуки",
+    "description": "Ноутбуки для работы и учёбы",
+    "icon": "categories/notebook.png",
+    "parent": null,
+    "is_active": true,
+    "is_featured": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 4,
+  "fields": {
+    "title": "Аксессуары",
+    "description": "Полезные аксессуары",
+    "icon": "categories/hadphones.png",
+    "parent": null,
+    "is_active": true,
+    "is_featured": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 5,
+  "fields": {
+    "title": "Игровые товары",
+    "description": "MEGANO — твоя игра, твои правила!",
+    "icon": "categories/game_PC.png",
+    "parent": null,
+    "is_active": true,
+    "is_featured": false,
+    "is_deleted": false
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 1,
+  "fields": {
+    "name": "Gaming"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 2,
+  "fields": {
+    "name": "Популярное"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 3,
+  "fields": {
+    "name": "Новинка"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 4,
+  "fields": {
+    "name": "Скидка"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "title": "MEGANO Gaming GPU",
+    "description": "Игровая видеокарта с двумя вентиляторами охлаждения и эффектным дизайном для сборки современного игрового компьютера.",
+    "full_description": "MEGANO Gaming GPU — видеокарта для любителей компьютерных игр и современных технологий.\r\n\r\nСистема охлаждения с двумя вентиляторами и выразительный игровой дизайн делают её привлекательным компонентом для персонального компьютера.\r\n\r\nСоздавай собственную игровую систему и открывай новые возможности вместе с MEGANO Gaming.",
+    "price": "799.99",
+    "count": 49,
+    "free_delivery": true,
+    "sort_index": 1,
+    "is_limited": true,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-13T13:29:38.273Z",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 2,
+  "fields": {
+    "category": 2,
+    "title": "MEGANO Phone X",
+    "description": "Флагманский смартфон с элегантным дизайном, высокой производительностью и современными возможностями для каждого дня.",
+    "full_description": "MEGANO Phone X — смартфон для тех, кто выбирает стиль, комфорт и современные технологии. Продуманный дизайн, удобный экран и плавная работа интерфейса делают его отличным спутником на каждый день.\r\n\r\nОбщайся с близкими, создавай фотографии, смотри любимые фильмы и наслаждайся мобильными развлечениями. MEGANO Phone X создан, чтобы всё необходимое всегда было под рукой.",
+    "price": "699.99",
+    "count": 98,
+    "free_delivery": true,
+    "sort_index": 0,
+    "is_limited": true,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.698Z",
+    "tags": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 3,
+  "fields": {
+    "category": 2,
+    "title": "MEGANO Phone Lite",
+    "description": "Стильный и доступный смартфон для общения, развлечений и повседневных задач. Всё необходимое в одном устройстве.",
+    "full_description": "MEGANO Phone Lite — практичный смартфон, сочетающий современный внешний вид, удобство использования и доступную стоимость.\r\n\r\nОтлично подходит для общения в социальных сетях, просмотра видео, учёбы и ежедневных дел. Лаконичный дизайн и понятный интерфейс делают MEGANO Phone Lite хорошим выбором для тех, кто ценит простоту и функциональность.",
+    "price": "399.99",
+    "count": 98,
+    "free_delivery": true,
+    "sort_index": 1,
+    "is_limited": false,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.699Z",
+    "tags": [
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 4,
+  "fields": {
+    "category": 3,
+    "title": "MEGANO Laptop Pro",
+    "description": "Элегантный и производительный ноутбук для работы, учёбы и творчества. Современный дизайн и удобство в каждой детали.",
+    "full_description": "MEGANO Laptop Pro — универсальный ноутбук для людей, которым важно сочетание производительности, мобильности и стиля.\r\n\r\nРаботай над проектами, изучай новые технологии, создавай контент и наслаждайся любимыми фильмами. Продуманный корпус и современный внешний вид делают этот ноутбук отличным дополнением к рабочему пространству.\r\n\r\nMEGANO Laptop Pro — технологии, которые помогают воплощать идеи.",
+    "price": "1699.99",
+    "count": 49,
+    "free_delivery": true,
+    "sort_index": 2,
+    "is_limited": true,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.700Z",
+    "tags": [
+      2
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 5,
+  "fields": {
+    "category": 5,
+    "title": "MEGANO Gaming PC",
+    "description": "Мощный игровой компьютер MEGANO Gaming PC с эффектной RGB-подсветкой, стильным корпусом и возможностями для современных игр.",
+    "full_description": "MEGANO Gaming PC — игровой компьютер, созданный для тех, кто любит технологии, современные игры и впечатляющий дизайн.\r\n\r\nСтильный корпус с прозрачной боковой панелью и яркой RGB-подсветкой подчёркивает игровой характер устройства. Компьютер отлично впишется в игровую зону и подойдёт для развлечений, работы и творческих проектов.\r\n\r\nОткрой новые возможности вместе с игровой серией MEGANO.",
+    "price": "899.99",
+    "count": 50,
+    "free_delivery": true,
+    "sort_index": 3,
+    "is_limited": false,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.701Z",
+    "tags": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 6,
+  "fields": {
+    "category": 4,
+    "title": "MEGANO Wireless Headphones",
+    "description": "Стильные беспроводные наушники с удобной конструкцией для музыки, фильмов, общения и повседневного использования.",
+    "full_description": "MEGANO Wireless Headphones — беспроводные наушники для тех, кто любит музыку и ценит свободу движений.\r\n\r\nСовременный минималистичный дизайн и удобная конструкция делают их отличным выбором для дома, прогулок и путешествий.\r\n\r\nСлушай любимые композиции, смотри фильмы и общайся с друзьями с комфортом. MEGANO — больше удовольствия от каждого дня.",
+    "price": "199.99",
+    "count": 150,
+    "free_delivery": false,
+    "sort_index": 4,
+    "is_limited": false,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.702Z",
+    "tags": [
+      2
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 7,
+  "fields": {
+    "category": 4,
+    "title": "MEGANO Gaming Mouse RGB",
+    "description": "Стильная игровая мышь с RGB-подсветкой, эргономичной формой и современным дизайном для комфортной работы и игр.",
+    "full_description": "MEGANO Gaming Mouse RGB — компьютерная мышь для тех, кто ценит удобство, точность управления и стильные игровые аксессуары.\r\n\r\nЭргономичная форма помогает комфортно пользоваться мышью во время работы и игровых сессий, а яркая RGB-подсветка придаёт рабочему месту современный характер.\r\n\r\nДополните свою игровую систему аксессуарами MEGANO Gaming.",
+    "price": "79.99",
+    "count": 199,
+    "free_delivery": false,
+    "sort_index": 5,
+    "is_limited": false,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.703Z",
+    "tags": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 2,
+  "fields": {
+    "product": 1,
+    "image": "products/1016189165.jpg",
+    "alt": "Игровая видеокарта",
+    "sort_index": 0
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 3,
+  "fields": {
+    "product": 2,
+    "image": "products/phone.png",
+    "alt": "",
+    "sort_index": 0
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 4,
+  "fields": {
+    "product": 4,
+    "image": "products/notebook.png",
+    "alt": "",
+    "sort_index": 0
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 5,
+  "fields": {
+    "product": 6,
+    "image": "products/hadphones.png",
+    "alt": "",
+    "sort_index": 0
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 8,
+  "fields": {
+    "product": 3,
+    "image": "products/phone_lite.png",
+    "alt": "",
+    "sort_index": 0
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 9,
+  "fields": {
+    "product": 7,
+    "image": "products/mouse.png",
+    "alt": "",
+    "sort_index": 0
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 10,
+  "fields": {
+    "product": 5,
+    "image": "products/game_PC.png",
+    "alt": "",
+    "sort_index": 0
+  }
+},
+{
+  "model": "catalog.review",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "author": "Filip",
+    "email": "",
+    "text": "Отличная видеокарта, игры работают быстро!",
+    "rate": 5,
+    "created_at": "2026-10-13T14:04:23.241Z"
+  }
+},
+{
+  "model": "catalog.review",
+  "pk": 2,
+  "fields": {
+    "product": 1,
+    "author": "Filip",
+    "email": "filip@example.com",
+    "text": "Отличная производительность видеокарты!",
+    "rate": 5,
+    "created_at": "2026-10-13T14:30:52.542Z"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "name": "Тип устройства",
+    "value": "Дискретная видеокарта"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 2,
+  "fields": {
+    "product": 2,
+    "name": "Тип устройства",
+    "value": "Смартфон"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 3,
+  "fields": {
+    "product": 2,
+    "name": "Цвет",
+    "value": "Чёрный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 4,
+  "fields": {
+    "product": 2,
+    "name": "Класс",
+    "value": "Флагманский"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 5,
+  "fields": {
+    "product": 2,
+    "name": "Назначение",
+    "value": "Повседневное использование"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 6,
+  "fields": {
+    "product": 3,
+    "name": "Тип устройства",
+    "value": "Смартфон"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 7,
+  "fields": {
+    "product": 3,
+    "name": "Класс",
+    "value": "Бюджетный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 8,
+  "fields": {
+    "product": 3,
+    "name": "Назначение",
+    "value": "Общение, учёба и развлечения"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 9,
+  "fields": {
+    "product": 3,
+    "name": "Дизайн",
+    "value": "Современный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 10,
+  "fields": {
+    "product": 5,
+    "name": "Тип устройства",
+    "value": "Настольный игровой компьютер"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 11,
+  "fields": {
+    "product": 5,
+    "name": "Корпус",
+    "value": "С прозрачной боковой панелью"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 12,
+  "fields": {
+    "product": 5,
+    "name": "Подсветка",
+    "value": "RGB"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 13,
+  "fields": {
+    "product": 5,
+    "name": "Назначение",
+    "value": "Игры, работа и развлечения"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 14,
+  "fields": {
+    "product": 4,
+    "name": "Тип устройства",
+    "value": "Ноутбук"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 15,
+  "fields": {
+    "product": 4,
+    "name": "Класс",
+    "value": "Универсальный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 16,
+  "fields": {
+    "product": 4,
+    "name": "Назначение",
+    "value": "Работа, учёба, творчество"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 17,
+  "fields": {
+    "product": 4,
+    "name": "Формат",
+    "value": "Портативный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 18,
+  "fields": {
+    "product": 1,
+    "name": "Видеопамять",
+    "value": "8 ГБ"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 19,
+  "fields": {
+    "product": 1,
+    "name": "Охлаждение",
+    "value": "Два вентилятора"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 20,
+  "fields": {
+    "product": 1,
+    "name": "Назначение",
+    "value": "MEGANO Gaming"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 21,
+  "fields": {
+    "product": 6,
+    "name": "Тип устройства",
+    "value": "Беспроводные наушники"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 22,
+  "fields": {
+    "product": 6,
+    "name": "Конструкция",
+    "value": "Полноразмерные"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 23,
+  "fields": {
+    "product": 6,
+    "name": "Цвет",
+    "value": "Чёрный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 24,
+  "fields": {
+    "product": 6,
+    "name": "Назначение",
+    "value": "Музыка, фильмы, общение"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 25,
+  "fields": {
+    "product": 7,
+    "name": "Тип устройства",
+    "value": "Компьютерная мышь"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 26,
+  "fields": {
+    "product": 7,
+    "name": "Подсветка",
+    "value": "RGB"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 27,
+  "fields": {
+    "product": 7,
+    "name": "Дизайн",
+    "value": "Игровой"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 28,
+  "fields": {
+    "product": 7,
+    "name": "Назначение",
+    "value": "Игры и повседневная работа"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "language": "ru",
+    "title": "Электроника",
+    "description": ""
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "language": "ro",
+    "title": "Electronică",
+    "description": ""
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "language": "en",
+    "title": "Electronics",
+    "description": ""
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 4,
+  "fields": {
+    "category": 2,
+    "language": "ru",
+    "title": "Смартфоны",
+    "description": "Современные смартфоны"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 5,
+  "fields": {
+    "category": 2,
+    "language": "ro",
+    "title": "Smartphone-uri",
+    "description": "Smartphone-uri moderne"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 6,
+  "fields": {
+    "category": 2,
+    "language": "en",
+    "title": "Smartphones",
+    "description": "Modern smartphones"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 7,
+  "fields": {
+    "category": 3,
+    "language": "ru",
+    "title": "Ноутбуки",
+    "description": "Ноутбуки для работы и учёбы"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 8,
+  "fields": {
+    "category": 3,
+    "language": "ro",
+    "title": "Laptopuri",
+    "description": "Laptopuri pentru muncă și studiu"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "language": "en",
+    "title": "Laptops",
+    "description": "Laptops for work and study"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 10,
+  "fields": {
+    "category": 4,
+    "language": "ru",
+    "title": "Аксессуары",
+    "description": "Полезные аксессуары"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 11,
+  "fields": {
+    "category": 4,
+    "language": "ro",
+    "title": "Accesorii",
+    "description": "Accesorii utile"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 12,
+  "fields": {
+    "category": 4,
+    "language": "en",
+    "title": "Accessories",
+    "description": "Useful accessories"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 13,
+  "fields": {
+    "category": 5,
+    "language": "ru",
+    "title": "Игровые товары",
+    "description": "MEGANO — твоя игра, твои правила!"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 14,
+  "fields": {
+    "category": 5,
+    "language": "ro",
+    "title": "Produse de gaming",
+    "description": "MEGANO — jocul tău, regulile tale!"
+  }
+},
+{
+  "model": "catalog.categorytranslation",
+  "pk": 15,
+  "fields": {
+    "category": 5,
+    "language": "en",
+    "title": "Gaming products",
+    "description": "MEGANO — your game, your rules!"
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "language": "ru",
+    "title": "MEGANO Gaming GPU",
+    "description": "Игровая видеокарта с двумя вентиляторами охлаждения и эффектным дизайном для сборки современного игрового компьютера.",
+    "full_description": "MEGANO Gaming GPU — видеокарта для любителей компьютерных игр и современных технологий.\r\n\r\nСистема охлаждения с двумя вентиляторами и выразительный игровой дизайн делают её привлекательным компонентом для персонального компьютера.\r\n\r\nСоздавай собственную игровую систему и открывай новые возможности вместе с MEGANO Gaming."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 2,
+  "fields": {
+    "product": 1,
+    "language": "ro",
+    "title": "Placă video MEGANO Gaming",
+    "description": "Placă video pentru gaming, cu două ventilatoare de răcire și un design impresionant, ideală pentru un PC de jocuri modern.",
+    "full_description": "MEGANO Gaming GPU este o placă video pentru pasionații de jocuri și tehnologii moderne.\n\nSistemul de răcire cu două ventilatoare și designul său distinctiv o transformă într-o componentă atractivă pentru un calculator personal.\n\nConstruiește-ți propriul sistem de gaming și descoperă noi posibilități alături de MEGANO Gaming."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 3,
+  "fields": {
+    "product": 1,
+    "language": "en",
+    "title": "MEGANO Gaming GPU",
+    "description": "Gaming graphics card with dual cooling fans and a striking design for building a modern gaming PC.",
+    "full_description": "MEGANO Gaming GPU is a graphics card for fans of PC gaming and modern technology.\n\nIts dual-fan cooling system and bold gaming design make it an attractive component for a personal computer.\n\nBuild your own gaming setup and discover new possibilities with MEGANO Gaming."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 4,
+  "fields": {
+    "product": 2,
+    "language": "ru",
+    "title": "MEGANO Phone X",
+    "description": "Флагманский смартфон с элегантным дизайном, высокой производительностью и современными возможностями для каждого дня.",
+    "full_description": "MEGANO Phone X — смартфон для тех, кто выбирает стиль, комфорт и современные технологии. Продуманный дизайн, удобный экран и плавная работа интерфейса делают его отличным спутником на каждый день.\r\n\r\nОбщайся с близкими, создавай фотографии, смотри любимые фильмы и наслаждайся мобильными развлечениями. MEGANO Phone X создан, чтобы всё необходимое всегда было под рукой."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 5,
+  "fields": {
+    "product": 2,
+    "language": "ro",
+    "title": "MEGANO Phone X",
+    "description": "Smartphone premium cu design elegant, performanță ridicată și funcții moderne pentru fiecare zi.",
+    "full_description": "MEGANO Phone X este un smartphone pentru cei care aleg stilul, confortul și tehnologia modernă. Designul atent realizat, ecranul comod și interfața fluidă îl fac un partener excelent în fiecare zi.\n\nȚine legătura cu cei dragi, fă fotografii, urmărește filmele preferate și bucură-te de divertisment pe mobil. MEGANO Phone X este creat pentru ca tot ce ai nevoie să fie mereu la îndemână."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 6,
+  "fields": {
+    "product": 2,
+    "language": "en",
+    "title": "MEGANO Phone X",
+    "description": "Flagship smartphone with an elegant design, high performance, and modern features for everyday life.",
+    "full_description": "MEGANO Phone X is a smartphone for people who value style, comfort, and modern technology. Its thoughtful design, comfortable screen, and smooth interface make it an excellent everyday companion.\n\nStay in touch with loved ones, take photos, watch your favorite movies, and enjoy mobile entertainment. MEGANO Phone X is designed to keep everything you need close at hand."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 7,
+  "fields": {
+    "product": 3,
+    "language": "ru",
+    "title": "MEGANO Phone Lite",
+    "description": "Стильный и доступный смартфон для общения, развлечений и повседневных задач. Всё необходимое в одном устройстве.",
+    "full_description": "MEGANO Phone Lite — практичный смартфон, сочетающий современный внешний вид, удобство использования и доступную стоимость.\r\n\r\nОтлично подходит для общения в социальных сетях, просмотра видео, учёбы и ежедневных дел. Лаконичный дизайн и понятный интерфейс делают MEGANO Phone Lite хорошим выбором для тех, кто ценит простоту и функциональность."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 8,
+  "fields": {
+    "product": 3,
+    "language": "ro",
+    "title": "MEGANO Phone Lite",
+    "description": "Smartphone elegant și accesibil pentru comunicare, divertisment și activități zilnice. Tot ce ai nevoie într-un singur dispozitiv.",
+    "full_description": "MEGANO Phone Lite este un smartphone practic, care combină aspectul modern, ușurința în utilizare și prețul accesibil.\n\nEste ideal pentru rețele sociale, vizionarea videoclipurilor, studiu și activități de zi cu zi. Designul simplu și interfața intuitivă fac din MEGANO Phone Lite o alegere bună pentru cei care apreciază simplitatea și funcționalitatea."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 9,
+  "fields": {
+    "product": 3,
+    "language": "en",
+    "title": "MEGANO Phone Lite",
+    "description": "Stylish, affordable smartphone for communication, entertainment, and everyday tasks. Everything you need in one device.",
+    "full_description": "MEGANO Phone Lite is a practical smartphone that combines a modern look, ease of use, and an affordable price.\n\nIt is ideal for social media, watching videos, studying, and daily activities. Its clean design and intuitive interface make MEGANO Phone Lite a great choice for anyone who values simplicity and functionality."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 10,
+  "fields": {
+    "product": 4,
+    "language": "ru",
+    "title": "MEGANO Laptop Pro",
+    "description": "Элегантный и производительный ноутбук для работы, учёбы и творчества. Современный дизайн и удобство в каждой детали.",
+    "full_description": "MEGANO Laptop Pro — универсальный ноутбук для людей, которым важно сочетание производительности, мобильности и стиля.\r\n\r\nРаботай над проектами, изучай новые технологии, создавай контент и наслаждайся любимыми фильмами. Продуманный корпус и современный внешний вид делают этот ноутбук отличным дополнением к рабочему пространству.\r\n\r\nMEGANO Laptop Pro — технологии, которые помогают воплощать идеи."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 11,
+  "fields": {
+    "product": 4,
+    "language": "ro",
+    "title": "Laptop MEGANO Pro",
+    "description": "Laptop elegant și performant pentru muncă, studiu și creație. Design modern și confort în fiecare detaliu.",
+    "full_description": "MEGANO Laptop Pro este un laptop versatil pentru cei care apreciază performanța, mobilitatea și stilul.\n\nLucrează la proiecte, descoperă tehnologii noi, creează conținut și bucură-te de filmele preferate. Carcasa atent proiectată și aspectul modern îl fac o completare excelentă pentru spațiul de lucru.\n\nMEGANO Laptop Pro — tehnologie care te ajută să-ți transformi ideile în realitate."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 12,
+  "fields": {
+    "product": 4,
+    "language": "en",
+    "title": "MEGANO Laptop Pro",
+    "description": "Elegant, high-performance laptop for work, study, and creativity. Modern design and comfort in every detail.",
+    "full_description": "MEGANO Laptop Pro is a versatile laptop for people who value performance, mobility, and style.\n\nWork on projects, explore new technologies, create content, and enjoy your favorite movies. Its carefully designed chassis and modern appearance make it a great addition to any workspace.\n\nMEGANO Laptop Pro — technology that helps bring your ideas to life."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 13,
+  "fields": {
+    "product": 5,
+    "language": "ru",
+    "title": "MEGANO Gaming PC",
+    "description": "Мощный игровой компьютер MEGANO Gaming PC с эффектной RGB-подсветкой, стильным корпусом и возможностями для современных игр.",
+    "full_description": "MEGANO Gaming PC — игровой компьютер, созданный для тех, кто любит технологии, современные игры и впечатляющий дизайн.\r\n\r\nСтильный корпус с прозрачной боковой панелью и яркой RGB-подсветкой подчёркивает игровой характер устройства. Компьютер отлично впишется в игровую зону и подойдёт для развлечений, работы и творческих проектов.\r\n\r\nОткрой новые возможности вместе с игровой серией MEGANO."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 14,
+  "fields": {
+    "product": 5,
+    "language": "ro",
+    "title": "PC de gaming MEGANO",
+    "description": "Calculator de gaming puternic, cu iluminare RGB spectaculoasă, carcasă elegantă și posibilități pentru jocuri moderne.",
+    "full_description": "MEGANO Gaming PC este un calculator creat pentru cei care iubesc tehnologia, jocurile moderne și designul impresionant.\n\nCarcasa elegantă, cu panou lateral transparent și iluminare RGB intensă, evidențiază caracterul său de gaming. Calculatorul se integrează perfect într-un spațiu de joc și este potrivit pentru divertisment, muncă și proiecte creative.\n\nDescoperă noi posibilități cu seria de gaming MEGANO."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 15,
+  "fields": {
+    "product": 5,
+    "language": "en",
+    "title": "MEGANO Gaming PC",
+    "description": "Powerful MEGANO gaming PC with striking RGB lighting, a stylish case, and capabilities for modern games.",
+    "full_description": "MEGANO Gaming PC is a computer built for people who love technology, modern games, and impressive design.\n\nIts stylish case with a transparent side panel and vibrant RGB lighting highlights its gaming character. The PC fits perfectly into a gaming space and is suitable for entertainment, work, and creative projects.\n\nDiscover new possibilities with the MEGANO gaming series."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 16,
+  "fields": {
+    "product": 6,
+    "language": "ru",
+    "title": "MEGANO Wireless Headphones",
+    "description": "Стильные беспроводные наушники с удобной конструкцией для музыки, фильмов, общения и повседневного использования.",
+    "full_description": "MEGANO Wireless Headphones — беспроводные наушники для тех, кто любит музыку и ценит свободу движений.\r\n\r\nСовременный минималистичный дизайн и удобная конструкция делают их отличным выбором для дома, прогулок и путешествий.\r\n\r\nСлушай любимые композиции, смотри фильмы и общайся с друзьями с комфортом. MEGANO — больше удовольствия от каждого дня."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 17,
+  "fields": {
+    "product": 6,
+    "language": "ro",
+    "title": "Căști wireless MEGANO",
+    "description": "Căști fără fir elegante, cu design confortabil, pentru muzică, filme, conversații și utilizare zilnică.",
+    "full_description": "MEGANO Wireless Headphones sunt căști fără fir pentru cei care iubesc muzica și apreciază libertatea de mișcare.\n\nDesignul minimalist modern și construcția confortabilă le fac o alegere excelentă pentru acasă, plimbări și călătorii.\n\nAscultă melodiile preferate, urmărește filme și vorbește cu prietenii în deplin confort. MEGANO — mai multă plăcere în fiecare zi."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 18,
+  "fields": {
+    "product": 6,
+    "language": "en",
+    "title": "MEGANO Wireless Headphones",
+    "description": "Stylish wireless headphones with a comfortable design for music, movies, calls, and everyday use.",
+    "full_description": "MEGANO Wireless Headphones are designed for people who love music and value freedom of movement.\n\nTheir modern minimalist design and comfortable construction make them an excellent choice for home, walks, and travel.\n\nListen to your favorite tracks, watch movies, and chat with friends in comfort. MEGANO — more enjoyment every day."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 19,
+  "fields": {
+    "product": 7,
+    "language": "ru",
+    "title": "MEGANO Gaming Mouse RGB",
+    "description": "Стильная игровая мышь с RGB-подсветкой, эргономичной формой и современным дизайном для комфортной работы и игр.",
+    "full_description": "MEGANO Gaming Mouse RGB — компьютерная мышь для тех, кто ценит удобство, точность управления и стильные игровые аксессуары.\r\n\r\nЭргономичная форма помогает комфортно пользоваться мышью во время работы и игровых сессий, а яркая RGB-подсветка придаёт рабочему месту современный характер.\r\n\r\nДополните свою игровую систему аксессуарами MEGANO Gaming."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 20,
+  "fields": {
+    "product": 7,
+    "language": "ro",
+    "title": "Mouse de gaming MEGANO RGB",
+    "description": "Mouse de gaming elegant, cu iluminare RGB, formă ergonomică și design modern pentru muncă și jocuri confortabile.",
+    "full_description": "MEGANO Gaming Mouse RGB este un mouse pentru cei care apreciază confortul, precizia și accesoriile de gaming elegante.\n\nForma ergonomică asigură o utilizare confortabilă în timpul lucrului și al sesiunilor de joc, iar iluminarea RGB vibrantă oferă biroului un aspect modern.\n\nCompletează-ți sistemul de gaming cu accesoriile MEGANO Gaming."
+  }
+},
+{
+  "model": "catalog.producttranslation",
+  "pk": 21,
+  "fields": {
+    "product": 7,
+    "language": "en",
+    "title": "MEGANO Gaming Mouse RGB",
+    "description": "Stylish gaming mouse with RGB lighting, an ergonomic shape, and a modern design for comfortable work and play.",
+    "full_description": "MEGANO Gaming Mouse RGB is a computer mouse for those who value comfort, precise control, and stylish gaming accessories.\n\nIts ergonomic shape makes it comfortable to use during work and gaming sessions, while bright RGB lighting gives your desk a modern look.\n\nComplete your gaming setup with MEGANO Gaming accessories."
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 1,
+  "fields": {
+    "tag": 1,
+    "language": "ru",
+    "name": "Gaming"
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 2,
+  "fields": {
+    "tag": 1,
+    "language": "ro",
+    "name": "Gaming"
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 3,
+  "fields": {
+    "tag": 1,
+    "language": "en",
+    "name": "Gaming"
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 4,
+  "fields": {
+    "tag": 2,
+    "language": "ru",
+    "name": "Популярное"
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 5,
+  "fields": {
+    "tag": 2,
+    "language": "ro",
+    "name": "Popular"
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 6,
+  "fields": {
+    "tag": 2,
+    "language": "en",
+    "name": "Popular"
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 7,
+  "fields": {
+    "tag": 3,
+    "language": "ru",
+    "name": "Новинка"
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 8,
+  "fields": {
+    "tag": 3,
+    "language": "ro",
+    "name": "Noutate"
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 9,
+  "fields": {
+    "tag": 3,
+    "language": "en",
+    "name": "New arrival"
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 10,
+  "fields": {
+    "tag": 4,
+    "language": "ru",
+    "name": "Скидка"
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 11,
+  "fields": {
+    "tag": 4,
+    "language": "ro",
+    "name": "Reducere"
+  }
+},
+{
+  "model": "catalog.tagtranslation",
+  "pk": 12,
+  "fields": {
+    "tag": 4,
+    "language": "en",
+    "name": "Sale"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 1,
+  "fields": {
+    "specification": 1,
+    "language": "ru",
+    "name": "Тип устройства",
+    "value": "Дискретная видеокарта"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 2,
+  "fields": {
+    "specification": 1,
+    "language": "ro",
+    "name": "Tip dispozitiv",
+    "value": "Placă video dedicată"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 3,
+  "fields": {
+    "specification": 1,
+    "language": "en",
+    "name": "Device type",
+    "value": "Dedicated graphics card"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 4,
+  "fields": {
+    "specification": 2,
+    "language": "ru",
+    "name": "Тип устройства",
+    "value": "Смартфон"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 5,
+  "fields": {
+    "specification": 2,
+    "language": "ro",
+    "name": "Tip dispozitiv",
+    "value": "Smartphone"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 6,
+  "fields": {
+    "specification": 2,
+    "language": "en",
+    "name": "Device type",
+    "value": "Smartphone"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 7,
+  "fields": {
+    "specification": 3,
+    "language": "ru",
+    "name": "Цвет",
+    "value": "Чёрный"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 8,
+  "fields": {
+    "specification": 3,
+    "language": "ro",
+    "name": "Culoare",
+    "value": "Negru"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 9,
+  "fields": {
+    "specification": 3,
+    "language": "en",
+    "name": "Color",
+    "value": "Black"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 10,
+  "fields": {
+    "specification": 4,
+    "language": "ru",
+    "name": "Класс",
+    "value": "Флагманский"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 11,
+  "fields": {
+    "specification": 4,
+    "language": "ro",
+    "name": "Clasă",
+    "value": "Premium"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 12,
+  "fields": {
+    "specification": 4,
+    "language": "en",
+    "name": "Class",
+    "value": "Flagship"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 13,
+  "fields": {
+    "specification": 5,
+    "language": "ru",
+    "name": "Назначение",
+    "value": "Повседневное использование"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 14,
+  "fields": {
+    "specification": 5,
+    "language": "ro",
+    "name": "Utilizare",
+    "value": "Utilizare zilnică"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 15,
+  "fields": {
+    "specification": 5,
+    "language": "en",
+    "name": "Intended use",
+    "value": "Everyday use"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 16,
+  "fields": {
+    "specification": 6,
+    "language": "ru",
+    "name": "Тип устройства",
+    "value": "Смартфон"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 17,
+  "fields": {
+    "specification": 6,
+    "language": "ro",
+    "name": "Tip dispozitiv",
+    "value": "Smartphone"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 18,
+  "fields": {
+    "specification": 6,
+    "language": "en",
+    "name": "Device type",
+    "value": "Smartphone"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 19,
+  "fields": {
+    "specification": 7,
+    "language": "ru",
+    "name": "Класс",
+    "value": "Бюджетный"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 20,
+  "fields": {
+    "specification": 7,
+    "language": "ro",
+    "name": "Clasă",
+    "value": "Buget"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 21,
+  "fields": {
+    "specification": 7,
+    "language": "en",
+    "name": "Class",
+    "value": "Budget"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 22,
+  "fields": {
+    "specification": 8,
+    "language": "ru",
+    "name": "Назначение",
+    "value": "Общение, учёба и развлечения"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 23,
+  "fields": {
+    "specification": 8,
+    "language": "ro",
+    "name": "Utilizare",
+    "value": "Comunicare, studiu și divertisment"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 24,
+  "fields": {
+    "specification": 8,
+    "language": "en",
+    "name": "Intended use",
+    "value": "Communication, study, and entertainment"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 25,
+  "fields": {
+    "specification": 9,
+    "language": "ru",
+    "name": "Дизайн",
+    "value": "Современный"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 26,
+  "fields": {
+    "specification": 9,
+    "language": "ro",
+    "name": "Design",
+    "value": "Modern"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 27,
+  "fields": {
+    "specification": 9,
+    "language": "en",
+    "name": "Design",
+    "value": "Modern"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 28,
+  "fields": {
+    "specification": 10,
+    "language": "ru",
+    "name": "Тип устройства",
+    "value": "Настольный игровой компьютер"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 29,
+  "fields": {
+    "specification": 10,
+    "language": "ro",
+    "name": "Tip dispozitiv",
+    "value": "Calculator de gaming desktop"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 30,
+  "fields": {
+    "specification": 10,
+    "language": "en",
+    "name": "Device type",
+    "value": "Desktop gaming computer"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 31,
+  "fields": {
+    "specification": 11,
+    "language": "ru",
+    "name": "Корпус",
+    "value": "С прозрачной боковой панелью"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 32,
+  "fields": {
+    "specification": 11,
+    "language": "ro",
+    "name": "Carcasă",
+    "value": "Cu panou lateral transparent"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 33,
+  "fields": {
+    "specification": 11,
+    "language": "en",
+    "name": "Case",
+    "value": "With transparent side panel"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 34,
+  "fields": {
+    "specification": 12,
+    "language": "ru",
+    "name": "Подсветка",
+    "value": "RGB"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 35,
+  "fields": {
+    "specification": 12,
+    "language": "ro",
+    "name": "Iluminare",
+    "value": "RGB"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 36,
+  "fields": {
+    "specification": 12,
+    "language": "en",
+    "name": "Lighting",
+    "value": "RGB"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 37,
+  "fields": {
+    "specification": 13,
+    "language": "ru",
+    "name": "Назначение",
+    "value": "Игры, работа и развлечения"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 38,
+  "fields": {
+    "specification": 13,
+    "language": "ro",
+    "name": "Utilizare",
+    "value": "Jocuri, muncă și divertisment"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 39,
+  "fields": {
+    "specification": 13,
+    "language": "en",
+    "name": "Intended use",
+    "value": "Gaming, work, and entertainment"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 40,
+  "fields": {
+    "specification": 14,
+    "language": "ru",
+    "name": "Тип устройства",
+    "value": "Ноутбук"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 41,
+  "fields": {
+    "specification": 14,
+    "language": "ro",
+    "name": "Tip dispozitiv",
+    "value": "Laptop"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 42,
+  "fields": {
+    "specification": 14,
+    "language": "en",
+    "name": "Device type",
+    "value": "Laptop"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 43,
+  "fields": {
+    "specification": 15,
+    "language": "ru",
+    "name": "Класс",
+    "value": "Универсальный"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 44,
+  "fields": {
+    "specification": 15,
+    "language": "ro",
+    "name": "Clasă",
+    "value": "Versatil"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 45,
+  "fields": {
+    "specification": 15,
+    "language": "en",
+    "name": "Class",
+    "value": "Versatile"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 46,
+  "fields": {
+    "specification": 16,
+    "language": "ru",
+    "name": "Назначение",
+    "value": "Работа, учёба, творчество"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 47,
+  "fields": {
+    "specification": 16,
+    "language": "ro",
+    "name": "Utilizare",
+    "value": "Muncă, studiu, creație"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 48,
+  "fields": {
+    "specification": 16,
+    "language": "en",
+    "name": "Intended use",
+    "value": "Work, study, creativity"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 49,
+  "fields": {
+    "specification": 17,
+    "language": "ru",
+    "name": "Формат",
+    "value": "Портативный"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 50,
+  "fields": {
+    "specification": 17,
+    "language": "ro",
+    "name": "Format",
+    "value": "Portabil"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 51,
+  "fields": {
+    "specification": 17,
+    "language": "en",
+    "name": "Form factor",
+    "value": "Portable"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 52,
+  "fields": {
+    "specification": 18,
+    "language": "ru",
+    "name": "Видеопамять",
+    "value": "8 ГБ"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 53,
+  "fields": {
+    "specification": 18,
+    "language": "ro",
+    "name": "Memorie video",
+    "value": "8 GB"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 54,
+  "fields": {
+    "specification": 18,
+    "language": "en",
+    "name": "Video memory",
+    "value": "8 GB"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 55,
+  "fields": {
+    "specification": 19,
+    "language": "ru",
+    "name": "Охлаждение",
+    "value": "Два вентилятора"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 56,
+  "fields": {
+    "specification": 19,
+    "language": "ro",
+    "name": "Răcire",
+    "value": "Două ventilatoare"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 57,
+  "fields": {
+    "specification": 19,
+    "language": "en",
+    "name": "Cooling",
+    "value": "Two fans"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 58,
+  "fields": {
+    "specification": 20,
+    "language": "ru",
+    "name": "Назначение",
+    "value": "MEGANO Gaming"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 59,
+  "fields": {
+    "specification": 20,
+    "language": "ro",
+    "name": "Utilizare",
+    "value": "MEGANO Gaming"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 60,
+  "fields": {
+    "specification": 20,
+    "language": "en",
+    "name": "Intended use",
+    "value": "MEGANO Gaming"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 61,
+  "fields": {
+    "specification": 21,
+    "language": "ru",
+    "name": "Тип устройства",
+    "value": "Беспроводные наушники"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 62,
+  "fields": {
+    "specification": 21,
+    "language": "ro",
+    "name": "Tip dispozitiv",
+    "value": "Căști fără fir"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 63,
+  "fields": {
+    "specification": 21,
+    "language": "en",
+    "name": "Device type",
+    "value": "Wireless headphones"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 64,
+  "fields": {
+    "specification": 22,
+    "language": "ru",
+    "name": "Конструкция",
+    "value": "Полноразмерные"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 65,
+  "fields": {
+    "specification": 22,
+    "language": "ro",
+    "name": "Construcție",
+    "value": "Circumaurale"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 66,
+  "fields": {
+    "specification": 22,
+    "language": "en",
+    "name": "Design type",
+    "value": "Over-ear"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 67,
+  "fields": {
+    "specification": 23,
+    "language": "ru",
+    "name": "Цвет",
+    "value": "Чёрный"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 68,
+  "fields": {
+    "specification": 23,
+    "language": "ro",
+    "name": "Culoare",
+    "value": "Negru"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 69,
+  "fields": {
+    "specification": 23,
+    "language": "en",
+    "name": "Color",
+    "value": "Black"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 70,
+  "fields": {
+    "specification": 24,
+    "language": "ru",
+    "name": "Назначение",
+    "value": "Музыка, фильмы, общение"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 71,
+  "fields": {
+    "specification": 24,
+    "language": "ro",
+    "name": "Utilizare",
+    "value": "Muzică, filme, conversații"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 72,
+  "fields": {
+    "specification": 24,
+    "language": "en",
+    "name": "Intended use",
+    "value": "Music, movies, calls"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 73,
+  "fields": {
+    "specification": 25,
+    "language": "ru",
+    "name": "Тип устройства",
+    "value": "Компьютерная мышь"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 74,
+  "fields": {
+    "specification": 25,
+    "language": "ro",
+    "name": "Tip dispozitiv",
+    "value": "Mouse pentru calculator"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 75,
+  "fields": {
+    "specification": 25,
+    "language": "en",
+    "name": "Device type",
+    "value": "Computer mouse"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 76,
+  "fields": {
+    "specification": 26,
+    "language": "ru",
+    "name": "Подсветка",
+    "value": "RGB"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 77,
+  "fields": {
+    "specification": 26,
+    "language": "ro",
+    "name": "Iluminare",
+    "value": "RGB"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 78,
+  "fields": {
+    "specification": 26,
+    "language": "en",
+    "name": "Lighting",
+    "value": "RGB"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 79,
+  "fields": {
+    "specification": 27,
+    "language": "ru",
+    "name": "Дизайн",
+    "value": "Игровой"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 80,
+  "fields": {
+    "specification": 27,
+    "language": "ro",
+    "name": "Design",
+    "value": "Gaming"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 81,
+  "fields": {
+    "specification": 27,
+    "language": "en",
+    "name": "Design",
+    "value": "Gaming"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 82,
+  "fields": {
+    "specification": 28,
+    "language": "ru",
+    "name": "Назначение",
+    "value": "Игры и повседневная работа"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 83,
+  "fields": {
+    "specification": 28,
+    "language": "ro",
+    "name": "Utilizare",
+    "value": "Jocuri și muncă zilnică"
+  }
+},
+{
+  "model": "catalog.specificationtranslation",
+  "pk": 84,
+  "fields": {
+    "specification": 28,
+    "language": "en",
+    "name": "Intended use",
+    "value": "Gaming and everyday work"
+  }
+}
+]

@@ -1,0 +1,139 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% get_current_language as CURRENT_LANGUAGE %}
+<div class="Middle">
+  <div class="Section">
+    <div class="wrap">
+      <div class="BannersHome">
+        <!-- Баннеры из API: названия категорий пока остаются на языке данных -->
+        <a v-for="(banner, index) in banners"
+           :key="index"
+           class="BannersHomeBlock"
+           :href="`/catalog/${banner.category}/`">
+          <div class="BannersHomeBlock-row">
+            <div class="BannersHomeBlock-block">
+              <strong class="BannersHomeBlock-title">${ banner.title }$</strong>
+              <div class="BannersHomeBlock-content">
+                {% if CURRENT_LANGUAGE == 'ru' %}от{% elif CURRENT_LANGUAGE == 'ro' %}de la{% else %}from{% endif %}
+                &#32;<span class="BannersHomeBlock-price">$ ${ banner.price }$</span>
+              </div>
+            </div>
+            <div class="BannersHomeBlock-block" v-if="banner.images.length > 0">
+              <div class="BannersHomeBlock-img">
+                <img :src="banner.images[0].src" :alt="banner.images[0].alt"/>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="Section Section_column Section_columnDesktop">
+    <div class="wrap">
+      <div class="Section-content">
+        <header class="Section-header">
+          <h2 class="Section-title">{% if CURRENT_LANGUAGE == 'ru' %}Популярные товары{% elif CURRENT_LANGUAGE == 'ro' %}Produse populare{% else %}Popular Products{% endif %}</h2>
+        </header>
+        <div class="Cards">
+          <div v-for="card in popularCards" :key="card.id" class="Card">
+            <a class="Card-picture" :href="`/product/${card.id}/`">
+              <img v-if="card.images.length > 0" :src="card.images[0].src" :alt="card.images[0].alt"/>
+            </a>
+            <div class="Card-content">
+              <strong class="Card-title"><a :href="`/product/${card.id}/`">${ card.title }$</a></strong>
+              <div class="Card-description">
+                <div class="Card-cost"><span class="Card-price">$${ card.price }$</span></div>
+                <div class="Card-hover">
+                  <a class="Card-btn" :href="`/product/${card.id}/`"
+                     aria-label="{% if CURRENT_LANGUAGE == 'ru' %}Посмотреть товар{% elif CURRENT_LANGUAGE == 'ro' %}Vezi produsul{% else %}View product{% endif %}">
+                    <img src="{% static 'frontend/assets/img/icons/card/cart.svg' %}" alt="cart.svg"/>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="Section Section_column Section_columnRight">
+    <div class="wrap">
+      <div class="Section-column">
+        <div class="Section-columnSection Section-columnSection_mark">
+          <div class="media media_advantage">
+            <div class="media-image"><img src="{% static 'frontend/assets/img/icons/advantages/shipping.svg' %}" alt="shipping.svg"/></div>
+            <div class="media-content">
+              <strong class="media-title">{% if CURRENT_LANGUAGE == 'ru' %}Доставка и возврат{% elif CURRENT_LANGUAGE == 'ro' %}Livrare și retur{% else %}Shipping &amp; Returns{% endif %}</strong>
+              <p class="media-text">{% if CURRENT_LANGUAGE == 'ru' %}Доставка по всему миру{% elif CURRENT_LANGUAGE == 'ro' %}Livrare în întreaga lume{% else %}Worldwide shipping{% endif %}</p>
+            </div>
+          </div>
+        </div>
+        <div class="Section-columnSection Section-columnSection_mark">
+          <div class="media media_advantage">
+            <div class="media-image"><img src="{% static 'frontend/assets/img/icons/advantages/moneyBack.svg' %}" alt="moneyBack.svg"/></div>
+            <div class="media-content">
+              <strong class="media-title">{% if CURRENT_LANGUAGE == 'ru' %}Возврат денег{% elif CURRENT_LANGUAGE == 'ro' %}Rambursarea banilor{% else %}Money Back{% endif %}</strong>
+              <p class="media-text">{% if CURRENT_LANGUAGE == 'ru' %}Безопасная оплата{% elif CURRENT_LANGUAGE == 'ro' %}Plăți securizate{% else %}Secure payments{% endif %}</p>
+            </div>
+          </div>
+        </div>
+        <div class="Section-columnSection Section-columnSection_mark">
+          <div class="media media_advantage">
+            <div class="media-image"><img src="{% static 'frontend/assets/img/icons/advantages/support.svg' %}" alt="support.svg"/></div>
+            <div class="media-content">
+              <strong class="media-title">{% if CURRENT_LANGUAGE == 'ru' %}Поддержка клиентов{% elif CURRENT_LANGUAGE == 'ro' %}Asistență pentru clienți{% else %}Customer Support{% endif %}</strong>
+              <p class="media-text">{% if CURRENT_LANGUAGE == 'ru' %}Быстрая помощь{% elif CURRENT_LANGUAGE == 'ro' %}Asistență rapidă{% else %}Fast support team{% endif %}</p>
+            </div>
+          </div>
+        </div>
+        <div class="Section-columnSection Section-columnSection_mark">
+          <div class="media media_advantage">
+            <div class="media-image"><img src="{% static 'frontend/assets/img/icons/advantages/quality.svg' %}" alt="quality.svg"/></div>
+            <div class="media-content">
+              <strong class="media-title">{% if CURRENT_LANGUAGE == 'ru' %}Гарантия качества{% elif CURRENT_LANGUAGE == 'ro' %}Garanția calității{% else %}Quality Guarantee{% endif %}</strong>
+              <p class="media-text">{% if CURRENT_LANGUAGE == 'ru' %}Качественные товары{% elif CURRENT_LANGUAGE == 'ro' %}Produse de calitate{% else %}Quality products{% endif %}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="Section-content">
+        <div class="Slider Slider_carousel">
+          <header class="Section-header Section-header_close">
+            <h2 class="Section-title">{% if CURRENT_LANGUAGE == 'ru' %}Лимитированная коллекция{% elif CURRENT_LANGUAGE == 'ro' %}Ediție limitată{% else %}Limited Edition{% endif %}</h2>
+            <div class="Section-control"><div class="Slider-navigate"></div></div>
+          </header>
+          <div class="Cards">
+            <div v-for="card in limitedCards" :key="card.id" class="Card">
+              <a class="Card-picture" :href="`/product/${card.id}/`">
+                <img v-if="card.images.length > 0" :src="card.images[0].src" :alt="card.images[0].alt"/>
+              </a>
+              <div class="Card-content">
+                <strong class="Card-title"><a :href="`/product/${card.id}/`">${ card.title }$</a></strong>
+                <div class="Card-description">
+                  <div class="Card-cost"><span class="Card-price">$${ card.price }$</span></div>
+                  <div class="Card-hover">
+                    <a class="Card-btn" :href="`/product/${card.id}/`"
+                       aria-label="{% if CURRENT_LANGUAGE == 'ru' %}Посмотреть товар{% elif CURRENT_LANGUAGE == 'ro' %}Vezi produsul{% else %}View product{% endif %}">
+                      <img src="{% static 'frontend/assets/img/icons/card/cart.svg' %}" alt="cart.svg"/>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block mixins %}
+<script src="{% static 'frontend/assets/js/index.js' %}"></script>
+{% endblock %}

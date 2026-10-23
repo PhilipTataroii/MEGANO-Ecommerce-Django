@@ -1,0 +1,298 @@
+
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% block content %}
+<div class="Middle Middle_top">
+  <div class="Middle-top">
+    <div class="wrap">
+      <div class="Middle-header">
+
+        <h1 class="Middle-title">
+          {% if CURRENT_LANGUAGE == 'ro' %}
+            Comanda
+          {% elif CURRENT_LANGUAGE == 'en' %}
+            Order
+          {% else %}
+            Заказ
+          {% endif %}
+          №${orderId}$
+        </h1>
+
+        <ul class="breadcrumbs Middle-breadcrumbs">
+          <li class="breadcrumbs-item">
+            <a href="/">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Acasă
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Home
+              {% else %}
+                Главная
+              {% endif %}
+            </a>
+          </li>
+
+          <li class="breadcrumbs-item">
+            <a href="/history-order/">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Istoricul comenzilor
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Order History
+              {% else %}
+                История заказов
+              {% endif %}
+            </a>
+          </li>
+
+          <li class="breadcrumbs-item breadcrumbs-item_current">
+            <span>
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Comanda
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Order
+              {% else %}
+                Заказ
+              {% endif %}
+              №${orderId}$
+            </span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="Section">
+    <div class="wrap">
+      <div class="Section-content">
+        <div class="Orders"></div>
+
+        <div class="Order">
+          <div class="Order-infoBlock">
+            <div class="Order-personal">
+              <div class="row">
+
+                <div class="row-block">
+
+                  <div class="Order-info Order-info_date">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}
+                        Data comenzii:
+                      {% elif CURRENT_LANGUAGE == 'en' %}
+                        Order date:
+                      {% else %}
+                        Дата заказа:
+                      {% endif %}
+                    </div>
+                    <div class="Order-infoContent">${createdAt}$</div>
+                  </div>
+
+                  <div class="Order-info">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}
+                        Nume complet:
+                      {% elif CURRENT_LANGUAGE == 'en' %}
+                        Full name:
+                      {% else %}
+                        ФИО:
+                      {% endif %}
+                    </div>
+                    <div class="Order-infoContent">${fullName}$</div>
+                  </div>
+
+                  <div class="Order-info">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}
+                        Telefon:
+                      {% elif CURRENT_LANGUAGE == 'en' %}
+                        Phone:
+                      {% else %}
+                        Телефон:
+                      {% endif %}
+                    </div>
+                    <div class="Order-infoContent">${phone}$</div>
+                  </div>
+
+                  <div class="Order-info">
+                    <div class="Order-infoType">E-mail:</div>
+                    <div class="Order-infoContent">${email}$</div>
+                  </div>
+
+                </div>
+
+                <div class="row-block">
+
+                  <div class="Order-info Order-info_delivery">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}
+                        Tipul livrării:
+                      {% elif CURRENT_LANGUAGE == 'en' %}
+                        Delivery type:
+                      {% else %}
+                        Тип доставки:
+                      {% endif %}
+                    </div>
+                    <div class="Order-infoContent">${deliveryType}$</div>
+                  </div>
+
+                  <div class="Order-info">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}
+                        Oraș:
+                      {% elif CURRENT_LANGUAGE == 'en' %}
+                        City:
+                      {% else %}
+                        Город:
+                      {% endif %}
+                    </div>
+                    <div class="Order-infoContent">${city}$</div>
+                  </div>
+
+                  <div class="Order-info">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}
+                        Adresă:
+                      {% elif CURRENT_LANGUAGE == 'en' %}
+                        Address:
+                      {% else %}
+                        Адрес:
+                      {% endif %}
+                    </div>
+                    <div class="Order-infoContent">${address}$</div>
+                  </div>
+
+                  <div class="Order-info Order-info_pay">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}
+                        Metoda de plată:
+                      {% elif CURRENT_LANGUAGE == 'en' %}
+                        Payment method:
+                      {% else %}
+                        Оплата:
+                      {% endif %}
+                    </div>
+                    <div class="Order-infoContent">${paymentType}$</div>
+                  </div>
+
+                  <div class="Order-info Order-info_status">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}
+                        Stare:
+                      {% elif CURRENT_LANGUAGE == 'en' %}
+                        Status:
+                      {% else %}
+                        Статус:
+                      {% endif %}
+                    </div>
+                    <div class="Order-infoContent">${status}$</div>
+                  </div>
+
+                  <div v-if="paymentError !== null"
+                       class="Order-info Order-info_error">
+                    <div class="Order-infoType">
+                      {% if CURRENT_LANGUAGE == 'ro' %}
+                        Plata a eșuat:
+                      {% elif CURRENT_LANGUAGE == 'en' %}
+                        Payment failed:
+                      {% else %}
+                        Оплата не прошла:
+                      {% endif %}
+                    </div>
+                    <div class="Order-infoContent">${paymentError}$</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="Cart Cart_order">
+
+              <div v-for="product in products"
+                   :key="product.id"
+                   class="Cart-product">
+
+                <div class="Cart-block Cart-block_row">
+                  <div class="Cart-block Cart-block_pict">
+                    <a class="Cart-pict" :href="`/product/${product.id}/`">
+                      <img
+                        v-if="product.images && product.images.length > 0"
+                        class="Cart-img"
+                        :src="product.images[0].src"
+                        :alt="product.images[0].alt"
+                      />
+                    </a>
+                  </div>
+
+                  <div class="Cart-block Cart-block_info">
+                    <a class="Cart-title" :href="`/product/${product.id}/`">
+                      ${product.title}$
+                    </a>
+                    <div class="Cart-desc">${product.shortDescription}$</div>
+                  </div>
+
+                  <div class="Cart-block Cart-block_price">
+                    <div class="Cart-price">${product.price}$$</div>
+                  </div>
+                </div>
+
+                <div class="Cart-block Cart-block_row">
+                  <div class="Cart-block Cart-block_amount">
+                    ${product.count}$
+                    {% if CURRENT_LANGUAGE == 'ro' %}
+                      buc.
+                    {% elif CURRENT_LANGUAGE == 'en' %}
+                      pcs.
+                    {% else %}
+                      шт.
+                    {% endif %}
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="Cart-total">
+                <div class="Cart-block Cart-block_total">
+                  <strong class="Cart-title">
+                    {% if CURRENT_LANGUAGE == 'ro' %}
+                      Total:
+                    {% elif CURRENT_LANGUAGE == 'en' %}
+                      Total:
+                    {% else %}
+                      Итого:
+                    {% endif %}
+
+                    <span class="Cart-price">${totalCost}$$</span>
+                  </strong>
+                </div>
+
+                <div class="Cart-block">
+                  <a class="btn btn_primary btn_lg"
+                     :href="`/payment/${orderId}/`">
+                    {% if CURRENT_LANGUAGE == 'ro' %}
+                      Plătește
+                    {% elif CURRENT_LANGUAGE == 'en' %}
+                      Pay Now
+                    {% else %}
+                      Оплатить
+                    {% endif %}
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block mixins %}
+<script src="{% static 'frontend/assets/js/order-detail.js' %}"></script>
+{% endblock %}

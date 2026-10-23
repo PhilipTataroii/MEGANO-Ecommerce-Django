@@ -1,0 +1,197 @@
+
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% block content %}
+<div class="Middle Middle_top">
+  <div class="Middle-top">
+    <div class="wrap">
+      <div class="Middle-header">
+
+        <h1 class="Middle-title">
+          {% if CURRENT_LANGUAGE == 'ro' %}
+            Plată
+          {% elif CURRENT_LANGUAGE == 'en' %}
+            Payment
+          {% else %}
+            Оплата
+          {% endif %}
+        </h1>
+
+        <ul class="breadcrumbs Middle-breadcrumbs">
+          <li class="breadcrumbs-item">
+            <a href="/">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Acasă
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Home
+              {% else %}
+                Главная
+              {% endif %}
+            </a>
+          </li>
+
+          <li class="breadcrumbs-item breadcrumbs-item_current">
+            <span>
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Plată
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Payment
+              {% else %}
+                Оплата
+              {% endif %}
+            </span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="Section">
+    <div class="wrap">
+
+      <form class="form Payment" @submit.prevent="submitPayment">
+
+        <div class="Payment-card">
+
+          <!-- НОМЕР КАРТЫ -->
+          <div class="form-group">
+            <label for="number1" class="form-label">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Numărul cardului
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Card Number
+              {% else %}
+                Номер карты
+              {% endif %}
+
+              <input
+                class="form-input Payment-bill"
+                id="number1"
+                name="number1"
+                type="text"
+                data-validate="require"
+                placeholder="9999 9999 9999 9999"
+                v-model="number1"
+                maxlength="16"
+              />
+            </label>
+          </div>
+
+          <!-- МЕСЯЦ -->
+          <div class="form-group">
+            <label for="month" class="form-label">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Luna
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Month
+              {% else %}
+                Месяц
+              {% endif %}
+
+              <input
+                class="form-input Payment-bill"
+                id="month"
+                name="month"
+                type="text"
+                data-mask="99"
+                data-validate="require"
+                placeholder="12"
+                v-model="month"
+              />
+            </label>
+          </div>
+
+          <!-- ГОД -->
+          <div class="form-group">
+            <label for="year" class="form-label">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Anul
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Year
+              {% else %}
+                Год
+              {% endif %}
+
+              <input
+                class="form-input Payment-bill"
+                id="year"
+                name="year"
+                type="text"
+                data-mask="99"
+                data-validate="require"
+                placeholder="28"
+                v-model="year"
+              />
+            </label>
+          </div>
+
+          <!-- CVV -->
+          <div class="form-group">
+            <label for="code" class="form-label">
+              CVV
+
+              <input
+                class="form-input Payment-bill"
+                id="code"
+                name="code"
+                type="text"
+                data-mask="999"
+                data-validate="require"
+                placeholder="000"
+                v-model="code"
+              />
+            </label>
+          </div>
+
+          <!-- ИМЯ ВЛАДЕЛЬЦА КАРТЫ -->
+          <div class="form-group">
+            <label for="name" class="form-label">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Numele titularului cardului
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Cardholder Name
+              {% else %}
+                Имя владельца карты
+              {% endif %}
+
+              <input
+                class="form-input Payment-bill"
+                id="name"
+                name="name"
+                type="text"
+                data-validate="require"
+                placeholder="{% if CURRENT_LANGUAGE == 'ro' %}Ion Popescu{% elif CURRENT_LANGUAGE == 'en' %}John Smith{% else %}Иван Иванов{% endif %}"
+                v-model="name"
+              />
+            </label>
+          </div>
+
+        </div>
+
+        <div class="Payment-pay">
+          <button class="btn btn_primary" type="submit">
+            {% if CURRENT_LANGUAGE == 'ro' %}
+              Plătește
+            {% elif CURRENT_LANGUAGE == 'en' %}
+              Pay Now
+            {% else %}
+              Оплатить
+            {% endif %}
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block mixins %}
+<script src="{% static 'frontend/assets/js/payment.js' %}"></script>
+{% endblock %}

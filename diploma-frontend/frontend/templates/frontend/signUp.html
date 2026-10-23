@@ -1,0 +1,69 @@
+
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% block content %}
+<div class="Auth">
+    <div class="wrapper">
+
+        <h3 class="sign-in">
+            {% if CURRENT_LANGUAGE == 'ro' %}
+                Înregistrare
+            {% elif CURRENT_LANGUAGE == 'en' %}
+                Registration
+            {% else %}
+                Регистрация
+            {% endif %}
+        </h3>
+
+        <form @submit.prevent="signUp()">
+
+            <input
+                class="user-input"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="{% if CURRENT_LANGUAGE == 'ro' %}Nume{% elif CURRENT_LANGUAGE == 'en' %}Name{% else %}Имя{% endif %}"
+            />
+
+            <input
+                class="user-input"
+                type="text"
+                name="login"
+                id="login"
+                placeholder="{% if CURRENT_LANGUAGE == 'ro' %}Nume de utilizator{% elif CURRENT_LANGUAGE == 'en' %}Username{% else %}Логин{% endif %}"
+            />
+
+            <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="{% if CURRENT_LANGUAGE == 'ro' %}Parolă{% elif CURRENT_LANGUAGE == 'en' %}Password{% else %}Пароль{% endif %}"
+            />
+
+            <input
+                type="submit"
+                value="{% if CURRENT_LANGUAGE == 'ro' %}Creează un cont{% elif CURRENT_LANGUAGE == 'en' %}Create Account{% else %}Создать аккаунт{% endif %}"
+            />
+
+            <a class="sub-link" href="/sign-in">
+                {% if CURRENT_LANGUAGE == 'ro' %}
+                    Autentificare
+                {% elif CURRENT_LANGUAGE == 'en' %}
+                    Sign In
+                {% else %}
+                    Войти
+                {% endif %}
+            </a>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block mixins %}
+<script src="{% static 'frontend/assets/js/signUp.js' %}"></script>
+{% endblock %}

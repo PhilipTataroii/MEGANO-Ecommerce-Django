@@ -1,0 +1,8 @@
+asgiref==3.12.1
+Django==5.2.18
+pillow==12.3.0
+sqlparse==0.6.0
+tzdata==2026.5
+django-cleanup==9.0.0
+djangorestframework==3.18.3
+drf-spectacular==0.30.0

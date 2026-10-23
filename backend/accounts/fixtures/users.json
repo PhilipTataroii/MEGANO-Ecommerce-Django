@@ -1,0 +1,32 @@
+[
+  {
+    "model": "auth.user",
+    "fields": {
+      "username": "demo_admin",
+      "password": "!disabled",
+      "first_name": "Demo",
+      "last_name": "Administrator",
+      "email": "admin@example.com",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "username": "demo_customer",
+      "password": "!disabled",
+      "first_name": "Demo",
+      "last_name": "Customer",
+      "email": "customer@example.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

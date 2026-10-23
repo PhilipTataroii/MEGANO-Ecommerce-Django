@@ -1,0 +1,113 @@
+
+{% extends "frontend/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% block content %}
+<div class="Middle Middle_top">
+  <div class="Middle-top">
+    <div class="wrap">
+      <div class="Middle-header">
+
+        <h1 class="Middle-title">
+          {% if CURRENT_LANGUAGE == 'ro' %}
+            Plată
+          {% elif CURRENT_LANGUAGE == 'en' %}
+            Payment
+          {% else %}
+            Оплата
+          {% endif %}
+        </h1>
+
+        <ul class="breadcrumbs Middle-breadcrumbs">
+          <li class="breadcrumbs-item">
+            <a href="/">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Acasă
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Home
+              {% else %}
+                Главная
+              {% endif %}
+            </a>
+          </li>
+
+          <li class="breadcrumbs-item breadcrumbs-item_current">
+            <span>
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Plată
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Payment
+              {% else %}
+                Оплата
+              {% endif %}
+            </span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="Section">
+    <div class="wrap">
+
+      <form class="form Payment" action="#" method="post">
+        <div class="Payment-card">
+
+          <div class="form-group">
+            <label class="form-label" for="numero1">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Numărul contului
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Account Number
+              {% else %}
+                Номер счёта
+              {% endif %}
+            </label>
+
+            <input
+              class="form-input Payment-bill"
+              id="numero1"
+              name="numero1"
+              type="text"
+              placeholder="9999 9999"
+              data-mask="9999 9999"
+              data-validate="require pay"
+            />
+          </div>
+
+          <div class="form-group">
+            <a class="btn btn_success Payment-generate" href="#">
+              {% if CURRENT_LANGUAGE == 'ro' %}
+                Generează un cont aleatoriu
+              {% elif CURRENT_LANGUAGE == 'en' %}
+                Generate Random Account
+              {% else %}
+                Сгенерировать случайный счёт
+              {% endif %}
+            </a>
+          </div>
+
+        </div>
+
+        <div class="Payment-pay">
+          <a class="btn btn_primary" href="/progress-payment/">
+            {% if CURRENT_LANGUAGE == 'ro' %}
+              Plătește
+            {% elif CURRENT_LANGUAGE == 'en' %}
+              Pay Now
+            {% else %}
+              Оплатить
+            {% endif %}
+          </a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

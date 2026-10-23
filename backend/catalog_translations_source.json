@@ -1,0 +1,499 @@
+[
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "title": "Электроника",
+    "description": "",
+    "icon": "categories/1016189165.jpg",
+    "parent": null,
+    "is_active": true,
+    "is_featured": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 2,
+  "fields": {
+    "title": "Смартфоны",
+    "description": "Современные смартфоны",
+    "icon": "categories/phone_lite.png",
+    "parent": null,
+    "is_active": true,
+    "is_featured": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 3,
+  "fields": {
+    "title": "Ноутбуки",
+    "description": "Ноутбуки для работы и учёбы",
+    "icon": "categories/notebook.png",
+    "parent": null,
+    "is_active": true,
+    "is_featured": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 4,
+  "fields": {
+    "title": "Аксессуары",
+    "description": "Полезные аксессуары",
+    "icon": "categories/hadphones.png",
+    "parent": null,
+    "is_active": true,
+    "is_featured": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 5,
+  "fields": {
+    "title": "Игровые товары",
+    "description": "MEGANO — твоя игра, твои правила!",
+    "icon": "categories/game_PC.png",
+    "parent": null,
+    "is_active": true,
+    "is_featured": false,
+    "is_deleted": false
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "title": "MEGANO Gaming GPU",
+    "description": "Игровая видеокарта с двумя вентиляторами охлаждения и эффектным дизайном для сборки современного игрового компьютера.",
+    "full_description": "MEGANO Gaming GPU — видеокарта для любителей компьютерных игр и современных технологий.\r\n\r\nСистема охлаждения с двумя вентиляторами и выразительный игровой дизайн делают её привлекательным компонентом для персонального компьютера.\r\n\r\nСоздавай собственную игровую систему и открывай новые возможности вместе с MEGANO Gaming.",
+    "price": "799.99",
+    "count": 50,
+    "free_delivery": true,
+    "sort_index": 1,
+    "is_limited": true,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-13T13:29:38.273Z",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 2,
+  "fields": {
+    "category": 2,
+    "title": "MEGANO Phone X",
+    "description": "Флагманский смартфон с элегантным дизайном, высокой производительностью и современными возможностями для каждого дня.",
+    "full_description": "MEGANO Phone X — смартфон для тех, кто выбирает стиль, комфорт и современные технологии. Продуманный дизайн, удобный экран и плавная работа интерфейса делают его отличным спутником на каждый день.\r\n\r\nОбщайся с близкими, создавай фотографии, смотри любимые фильмы и наслаждайся мобильными развлечениями. MEGANO Phone X создан, чтобы всё необходимое всегда было под рукой.",
+    "price": "699.99",
+    "count": 99,
+    "free_delivery": true,
+    "sort_index": 0,
+    "is_limited": true,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.698Z",
+    "tags": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 3,
+  "fields": {
+    "category": 2,
+    "title": "MEGANO Phone Lite",
+    "description": "Стильный и доступный смартфон для общения, развлечений и повседневных задач. Всё необходимое в одном устройстве.",
+    "full_description": "MEGANO Phone Lite — практичный смартфон, сочетающий современный внешний вид, удобство использования и доступную стоимость.\r\n\r\nОтлично подходит для общения в социальных сетях, просмотра видео, учёбы и ежедневных дел. Лаконичный дизайн и понятный интерфейс делают MEGANO Phone Lite хорошим выбором для тех, кто ценит простоту и функциональность.",
+    "price": "399.99",
+    "count": 98,
+    "free_delivery": true,
+    "sort_index": 1,
+    "is_limited": false,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.699Z",
+    "tags": [
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 4,
+  "fields": {
+    "category": 3,
+    "title": "MEGANO Laptop Pro",
+    "description": "Элегантный и производительный ноутбук для работы, учёбы и творчества. Современный дизайн и удобство в каждой детали.",
+    "full_description": "MEGANO Laptop Pro — универсальный ноутбук для людей, которым важно сочетание производительности, мобильности и стиля.\r\n\r\nРаботай над проектами, изучай новые технологии, создавай контент и наслаждайся любимыми фильмами. Продуманный корпус и современный внешний вид делают этот ноутбук отличным дополнением к рабочему пространству.\r\n\r\nMEGANO Laptop Pro — технологии, которые помогают воплощать идеи.",
+    "price": "1699.99",
+    "count": 50,
+    "free_delivery": true,
+    "sort_index": 2,
+    "is_limited": true,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.700Z",
+    "tags": [
+      2
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 5,
+  "fields": {
+    "category": 5,
+    "title": "MEGANO Gaming PC",
+    "description": "Мощный игровой компьютер MEGANO Gaming PC с эффектной RGB-подсветкой, стильным корпусом и возможностями для современных игр.",
+    "full_description": "MEGANO Gaming PC — игровой компьютер, созданный для тех, кто любит технологии, современные игры и впечатляющий дизайн.\r\n\r\nСтильный корпус с прозрачной боковой панелью и яркой RGB-подсветкой подчёркивает игровой характер устройства. Компьютер отлично впишется в игровую зону и подойдёт для развлечений, работы и творческих проектов.\r\n\r\nОткрой новые возможности вместе с игровой серией MEGANO.",
+    "price": "899.99",
+    "count": 50,
+    "free_delivery": true,
+    "sort_index": 3,
+    "is_limited": false,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.701Z",
+    "tags": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 6,
+  "fields": {
+    "category": 4,
+    "title": "MEGANO Wireless Headphones",
+    "description": "Стильные беспроводные наушники с удобной конструкцией для музыки, фильмов, общения и повседневного использования.",
+    "full_description": "MEGANO Wireless Headphones — беспроводные наушники для тех, кто любит музыку и ценит свободу движений.\r\n\r\nСовременный минималистичный дизайн и удобная конструкция делают их отличным выбором для дома, прогулок и путешествий.\r\n\r\nСлушай любимые композиции, смотри фильмы и общайся с друзьями с комфортом. MEGANO — больше удовольствия от каждого дня.",
+    "price": "199.99",
+    "count": 150,
+    "free_delivery": false,
+    "sort_index": 4,
+    "is_limited": false,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.702Z",
+    "tags": [
+      2
+    ]
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 7,
+  "fields": {
+    "category": 4,
+    "title": "MEGANO Gaming Mouse RGB",
+    "description": "Стильная игровая мышь с RGB-подсветкой, эргономичной формой и современным дизайном для комфортной работы и игр.",
+    "full_description": "MEGANO Gaming Mouse RGB — компьютерная мышь для тех, кто ценит удобство, точность управления и стильные игровые аксессуары.\r\n\r\nЭргономичная форма помогает комфортно пользоваться мышью во время работы и игровых сессий, а яркая RGB-подсветка придаёт рабочему месту современный характер.\r\n\r\nДополните свою игровую систему аксессуарами MEGANO Gaming.",
+    "price": "79.99",
+    "count": 200,
+    "free_delivery": false,
+    "sort_index": 5,
+    "is_limited": false,
+    "is_active": true,
+    "is_deleted": false,
+    "created_at": "2026-10-15T13:20:38.703Z",
+    "tags": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 1,
+  "fields": {
+    "name": "Gaming"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 2,
+  "fields": {
+    "name": "Популярное"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 3,
+  "fields": {
+    "name": "Новинка"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 4,
+  "fields": {
+    "name": "Скидка"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "name": "Тип устройства",
+    "value": "Дискретная видеокарта"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 2,
+  "fields": {
+    "product": 2,
+    "name": "Тип устройства",
+    "value": "Смартфон"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 3,
+  "fields": {
+    "product": 2,
+    "name": "Цвет",
+    "value": "Чёрный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 4,
+  "fields": {
+    "product": 2,
+    "name": "Класс",
+    "value": "Флагманский"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 5,
+  "fields": {
+    "product": 2,
+    "name": "Назначение",
+    "value": "Повседневное использование"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 6,
+  "fields": {
+    "product": 3,
+    "name": "Тип устройства",
+    "value": "Смартфон"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 7,
+  "fields": {
+    "product": 3,
+    "name": "Класс",
+    "value": "Бюджетный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 8,
+  "fields": {
+    "product": 3,
+    "name": "Назначение",
+    "value": "Общение, учёба и развлечения"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 9,
+  "fields": {
+    "product": 3,
+    "name": "Дизайн",
+    "value": "Современный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 10,
+  "fields": {
+    "product": 5,
+    "name": "Тип устройства",
+    "value": "Настольный игровой компьютер"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 11,
+  "fields": {
+    "product": 5,
+    "name": "Корпус",
+    "value": "С прозрачной боковой панелью"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 12,
+  "fields": {
+    "product": 5,
+    "name": "Подсветка",
+    "value": "RGB"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 13,
+  "fields": {
+    "product": 5,
+    "name": "Назначение",
+    "value": "Игры, работа и развлечения"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 14,
+  "fields": {
+    "product": 4,
+    "name": "Тип устройства",
+    "value": "Ноутбук"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 15,
+  "fields": {
+    "product": 4,
+    "name": "Класс",
+    "value": "Универсальный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 16,
+  "fields": {
+    "product": 4,
+    "name": "Назначение",
+    "value": "Работа, учёба, творчество"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 17,
+  "fields": {
+    "product": 4,
+    "name": "Формат",
+    "value": "Портативный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 18,
+  "fields": {
+    "product": 1,
+    "name": "Видеопамять",
+    "value": "8 ГБ"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 19,
+  "fields": {
+    "product": 1,
+    "name": "Охлаждение",
+    "value": "Два вентилятора"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 20,
+  "fields": {
+    "product": 1,
+    "name": "Назначение",
+    "value": "MEGANO Gaming"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 21,
+  "fields": {
+    "product": 6,
+    "name": "Тип устройства",
+    "value": "Беспроводные наушники"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 22,
+  "fields": {
+    "product": 6,
+    "name": "Конструкция",
+    "value": "Полноразмерные"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 23,
+  "fields": {
+    "product": 6,
+    "name": "Цвет",
+    "value": "Чёрный"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 24,
+  "fields": {
+    "product": 6,
+    "name": "Назначение",
+    "value": "Музыка, фильмы, общение"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 25,
+  "fields": {
+    "product": 7,
+    "name": "Тип устройства",
+    "value": "Компьютерная мышь"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 26,
+  "fields": {
+    "product": 7,
+    "name": "Подсветка",
+    "value": "RGB"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 27,
+  "fields": {
+    "product": 7,
+    "name": "Дизайн",
+    "value": "Игровой"
+  }
+},
+{
+  "model": "catalog.specification",
+  "pk": 28,
+  "fields": {
+    "product": 7,
+    "name": "Назначение",
+    "value": "Игры и повседневная работа"
+  }
+}
+]
