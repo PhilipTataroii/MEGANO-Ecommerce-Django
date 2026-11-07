@@ -4,6 +4,25 @@
 
 🇬🇧 **English** | 🇷🇺 [Русский](README.ru.md) | 🇷🇴 [Română](README.ro.md)
 
+## 📸 Application Screenshots
+
+Explore the MEGANO e-commerce platform through screenshots of its main features.
+
+### 🏠 Home Page
+![MEGANO Home Page](Megano_Screenshot/Home-Page.png)
+
+### 🛍️ Product Catalog
+![MEGANO Product Catalog](Megano_Screenshot/Product-Catalog.png)
+
+### 📦 Product Details
+![MEGANO Product Details](Megano_Screenshot/Product-Details.png)
+
+### 👤 User Registration
+![MEGANO Registration Panel](Megano_Screenshot/Register-Panel.png)
+
+### 🛒 Shopping Cart
+![MEGANO Shopping Cart](Megano_Screenshot/Shopping-Cart.png)
+
 ## Overview
 
 MEGANO is a full-stack e-commerce web application developed using Python, Django, and Django REST Framework.
