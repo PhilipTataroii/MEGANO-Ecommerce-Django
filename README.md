@@ -1,15 +1,22 @@
-
 # MEGANO — E-Commerce Platform
 
-MEGANO is a full-stack e-commerce web application developed with Python, Django, and Django REST Framework.
+🌐 **Documentation Languages**
 
-The project was created as the final diploma project for the Python Developer program at Skillbox, in partnership with GeekBrains.
+🇬🇧 **English** | 🇷🇺 [Русский](README.ru.md) | 🇷🇴 [Română](README.ro.md)
+
+## Overview
+
+MEGANO is a full-stack e-commerce web application developed using Python, Django, and Django REST Framework.
+
+The project was created as the final diploma project for the Python Developer professional training program at Skillbox, in partnership with GeekBrains.
+
+The application demonstrates practical experience in backend development, REST API design, database management, user authentication, order processing, and automated testing.
 
 ## Features
 
-- Product catalog with categories and product details
-- Product search, filtering and sorting
-- User registration, authentication and profiles
+- Product catalog with categories and detailed product pages
+- Product search, filtering, and sorting
+- User registration, authentication, and profile management
 - Shopping cart for guests and authenticated users
 - Order creation and order history
 - Order cancellation
@@ -21,20 +28,23 @@ The project was created as the final diploma project for the Python Developer pr
 
 ## Technology Stack
 
-**Backend**
+### Backend
+
 - Python
 - Django 5.2
 - Django REST Framework
 - SQLite
 - drf-spectacular
 
-**Frontend**
+### Frontend
+
 - HTML
 - CSS
 - JavaScript
-- Django templates
+- Django Templates
 
-**Development tools**
+### Development Tools
+
 - Git
 - GitLab
 - PyCharm
@@ -54,19 +64,21 @@ django_diploma/
 │   └── manage.py
 ├── diploma-frontend/
 ├── requirements.txt
-└── README.md
+├── README.md
+├── README.ru.md
+└── README.ro.md
 ```
 
 ## Installation
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://gitlab.skillbox.ru/filip_tataroi/python_django_diploma.git
 cd python_django_diploma
 ```
 
-### 2. Create a virtual environment
+### 2. Create a Virtual Environment
 
 ```bash
 python -m venv .venv
@@ -84,55 +96,54 @@ On Linux/macOS:
 source .venv/bin/activate
 ```
 
-### 3. Install dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Install the local frontend package
+### 4. Install the Local Frontend Package
 
 ```bash
 pip install -e ./diploma-frontend
 ```
 
-### 5. Navigate to the backend
+### 5. Navigate to the Backend Directory
 
 ```bash
 cd backend
 ```
 
-### 6. Apply database migrations
+### 6. Apply Database Migrations
 
 ```bash
 python manage.py migrate
 ```
 
-### 7. Load demo users
+### 7. Load Demo Data
 
 ```bash
 python manage.py loaddata users
-
 python manage.py loaddata catalog
 ```
 
-The fixture creates two demonstration accounts:
+The fixtures provide two demonstration accounts:
 
 | Username | Role |
-|----------|------|
-| demo_admin | Administrator |
-| demo_customer | Customer |
+|---|---|
+| `demo_admin` | Administrator |
+| `demo_customer` | Customer |
 
 For security reasons, passwords are disabled by default.
 
-To set passwords locally:
+To configure passwords locally:
 
 ```bash
 python manage.py changepassword demo_admin
 python manage.py changepassword demo_customer
 ```
 
-### 8. Run the development server
+### 8. Start the Development Server
 
 ```bash
 python manage.py runserver
@@ -144,23 +155,23 @@ http://127.0.0.1:8000/
 
 ## API Documentation
 
-Interactive Swagger documentation:
+**Interactive Swagger Documentation**
 
 http://127.0.0.1:8000/api/docs/
 
-OpenAPI schema:
+**OpenAPI Schema**
 
 http://127.0.0.1:8000/api/schema/
 
 ### Main API Endpoints
 
 | Endpoint | Description |
-|----------|-------------|
+|---|---|
 | `/api/catalog` | Product catalog |
 | `/api/categories` | Product categories |
 | `/api/product/<id>` | Product details |
 | `/api/basket` | Shopping cart |
-| `/api/orders` | Orders |
+| `/api/orders` | Order management |
 | `/api/payment/<order_id>` | Payment processing |
 | `/api/products/popular` | Popular products |
 | `/api/products/limited` | Limited products |
@@ -178,7 +189,9 @@ python manage.py test
 
 This application is an educational portfolio project.
 
-The default configuration is intended for local development. Production deployment requires secure environment variables, proper host configuration, static file handling, and production-ready security settings.
+The default configuration is intended for local development.
+
+Production deployment requires secure environment variables, appropriate host configuration, static file management, and production-ready security settings.
 
 ## Author
 
@@ -186,7 +199,11 @@ The default configuration is intended for local development. Production deployme
 
 Python / Django Developer
 
-Final diploma project — Skillbox Python Developer Program.
+**Project Type:** Final Diploma Project — Skillbox Python Developer Program
+
+GitHub: https://github.com/PhilipTataroii
+
+LinkedIn: https://www.linkedin.com/in/filip-tataroi/
 
 ## License
 
